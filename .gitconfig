@@ -1,0 +1,18 @@
+[user]
+        name = Guilherme Victor
+        email = 55333929+guivictorr@users.noreply.github.com
+	
+[alias]
+	a = add
+	sts = status -sb
+	logger = git log --graph --abbrev-commit --decorate --date=relative
+	cm = commit -m
+	ca = commit -a
+	aall = add .
+	fuck = reset --hard
+	
+[core]
+        autocrlf = false
+	
+[commit]
+	gpgsign = false
