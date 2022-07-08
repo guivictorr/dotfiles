@@ -1,4 +1,4 @@
-# Fig pre block. Keep at the top of this file.
+# A Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 
 # Path to your oh-my-zsh installation.
@@ -36,7 +36,7 @@ SPACESHIP_PROMPT_ORDER=(
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_USER_SHOW="always"
 SPACESHIP_PROMPT_SEPARATE_LINE=true
-SPACESHIP_CHAR_SYMBOL="👁 "
+SPACESHIP_CHAR_SYMBOL="👁  "
 
 # NVM Configuration
 export NVM_DIR="$HOME/.nvm"
