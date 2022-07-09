@@ -9,23 +9,110 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+Plug 'chrisbra/Colorizer'
+"Plug 'windwp/nvim-autopairs'
+"Plug 'windwp/nvim-ts-autotag'
 call plug#end()
+set t_Co=256
+set termguicolors
+set background=dark
 
-colorscheme omni
+" Captuccin 
+lua << EOF
+local catppuccin = require("catppuccin")
 
-lua << END
-require('lualine').setup {
-  options = {
-    theme = 'omni'
-  }
-}
-END
+catppuccin.setup {
+transparent_background = false,
+term_colors = false,
+styles = {
+	comments = "italic",
+	conditionals = "italic",
+	loops = "NONE",
+	functions = "NONE",
+	keywords = "NONE",
+	strings = "NONE",
+	variables = "NONE",
+	numbers = "NONE",
+	booleans = "NONE",
+	properties = "NONE",
+	types = "NONE",
+	operators = "NONE",
+},
+integrations = {
+	treesitter = true,
+	native_lsp = {
+		enabled = true,
+		virtual_text = {
+			errors = "italic",
+			hints = "italic",
+			warnings = "italic",
+			information = "italic",
+		},
+		underlines = {
+			errors = "underline",
+			hints = "underline",
+			warnings = "underline",
+			information = "underline",
+		},
+	},
+    coc_nvim = false,
+	lsp_trouble = false,
+	cmp = true,
+	lsp_saga = false,
+	gitgutter = false,
+	gitsigns = true,
+	telescope = true,
+	nvimtree = {
+		enabled = true,
+		show_root = false,
+		transparent_panel = false,
+	},
+	neotree = {
+		enabled = false,
+		show_root = false,
+		transparent_panel = false,
+	},
+	which_key = false,
+	indent_blankline = {
+		enabled = true,
+		colored_indent_levels = false,
+	},
+	dashboard = true,
+	neogit = false,
+	vim_sneak = false,
+	fern = false,
+	barbar = false,
+	bufferline = true,
+	markdown = true,
+	lightspeed = false,
+	ts_rainbow = false,
+	hop = false,
+	notify = true,
+	telekasten = true,
+	symbols_outline = true,
+  }}
+EOF
 
+let g:catppuccin_flavour = "mocha"
+colorscheme catppuccin
+
+" -- Telescope
 lua << END
 require('telescope').setup {
     defaults = {
         file_ignore_patterns = { "node_modules", "dist", "ios", "build", "android" }
     }
+}
+END
+
+" -- Lualine
+lua << END
+require('lualine').setup {
+  extensions = { 'nvim-tree' },
+  options = {
+    disabled_filetypes = {'NvimTree'}
+  }
 }
 END
 
@@ -133,7 +220,7 @@ set showmatch               " show matching
 set ignorecase              " case insensitive 
 set hlsearch                " highlight search
 set incsearch               " incremental search
-set tabstop=4               " number of columns occupied by a tab
+set tabstop=2               " number of columns occupied by a tab
 set softtabstop=4           " see multiple spaces as tabstops so <BS> does the right thing
 set expandtab               " converts tabs to white space
 set shiftwidth=4            " width for autoindents
