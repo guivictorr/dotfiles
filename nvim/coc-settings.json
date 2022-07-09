@@ -1,5 +1,7 @@
 {
   "suggest.noselect": false,
+  "tsserver.enableJavascript": true,
+  "tsserver.enableTypescript": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "typescript",

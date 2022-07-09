@@ -21,6 +21,7 @@ require('lualine').setup {
 }
 END
 
+" -- Nvim Tree ------------------------------------
 lua << END
 local g = vim.g
 
@@ -84,16 +85,39 @@ require'nvim-tree'.setup {
 }
 END
 
+
+" Auto complete with control space and tab completions
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" IDK
+command! -nargs=0 FormatFiles :CocCommand  prettier.formatFile eslint.executeAutofix
+au VimEnter * NvimTreeFocus
+
+
 " -- Typos ----------------------------------------
 iabbrev lenght length
 iabbrev widht width
 iabbrev heigth height
 iabbrev investiments investments
+" --------------------------------------------------
 
+" -- Keys ------------------------------------------
 nnoremap <silent><c-f> <cmd>Telescope find_files<cr>
 nnoremap <silent> <c-b> :NvimTreeToggle <cr>
 nnoremap <silent> <c-e> :NvimTreeFocus <cr>
-
+" ---------------------------------------------------
+"
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching 
 set ignorecase              " case insensitive 
