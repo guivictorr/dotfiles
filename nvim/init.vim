@@ -21,6 +21,14 @@ require('lualine').setup {
 }
 END
 
+lua << END
+require('telescope').setup {
+    defaults = {
+        file_ignore_patterns = { "node_modules", "dist", "ios", "build", "android" }
+    }
+}
+END
+
 " -- Nvim Tree ------------------------------------
 lua << END
 local g = vim.g
