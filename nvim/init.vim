@@ -77,6 +77,8 @@ require'nvim-tree'.setup {
      }
    },
    filters = {
+     dotfiles = true,
+     exclude = { ".zshrc", ".gitconfig" },
      custom = { ".git", "node_modules", ".cache", "*.bs.js" }
    },
    git = {
