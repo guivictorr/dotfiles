@@ -15,6 +15,6 @@ ln -s -f $PWD/nvim/coc-db.json ~/.config/coc/extensions/db.json
 
 # link vscode files
 ln -s -f $PWD/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-ln -s -f $PWD/vscode/keyvindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+ln -s -f $PWD/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 
 
