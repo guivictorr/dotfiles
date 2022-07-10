@@ -14,6 +14,13 @@ Plug 'chrisbra/Colorizer'
 "Plug 'windwp/nvim-autopairs'
 "Plug 'windwp/nvim-ts-autotag'
 call plug#end()
+
+" Disable Status bar on nvimtree buffer 
+function! DisableST()
+  return "%#NonText#"
+endfunction
+au BufEnter NvimTree setlocal statusline=%!DisableST()
+
 set t_Co=256
 set termguicolors
 set background=dark
@@ -182,8 +189,18 @@ require'nvim-tree'.setup {
 }
 END
 
+" FormatFiles command
+command! -nargs=0 FormatFiles :CocCommand  prettier.formatFile eslint.executeAutofix
+au VimEnter * NvimTreeFocus
 
-" Auto complete with control space and tab completions
+" -- Typos ----------------------------------------
+iabbrev lenght length
+iabbrev widht width
+iabbrev heigth height
+iabbrev investiments investments
+" --------------------------------------------------
+
+" -- Keys ------------------------------------------
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
@@ -197,22 +214,13 @@ endfunction
 
 inoremap <silent><expr> <c-space> coc#refresh()
 
-" IDK
-command! -nargs=0 FormatFiles :CocCommand  prettier.formatFile eslint.executeAutofix
-au VimEnter * NvimTreeFocus
-
-
-" -- Typos ----------------------------------------
-iabbrev lenght length
-iabbrev widht width
-iabbrev heigth height
-iabbrev investiments investments
-" --------------------------------------------------
-
-" -- Keys ------------------------------------------
+nnoremap <silent><c-s> :w <cr>
 nnoremap <silent><c-f> <cmd>Telescope find_files<cr>
 nnoremap <silent> <c-b> :NvimTreeToggle <cr>
 nnoremap <silent> <c-e> :NvimTreeFocus <cr>
+nnoremap <silent> <c-j> :m -2 <cr>
+nnoremap <silent> <c-k> :m +1 <cr>
+
 " ---------------------------------------------------
 "
 set nocompatible            " disable compatibility to old-time vi
