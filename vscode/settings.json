@@ -19,13 +19,12 @@
   "editor.suggest.preview": true,
   "editor.cursorBlinking": "smooth",
   "editor.accessibilitySupport": "off",
-  "editor.cursorSmoothCaretAnimation": true,
   "editor.suggestSelection": "first",
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
 
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "eq-material-theme-icons-palenight",
   "workbench.statusBar.visible": true,
   "workbench.startupEditor": "welcomePageInEmptyWorkbench",
   "workbench.editor.labelFormat": "short",
@@ -45,19 +44,20 @@
   "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.defaultProfile.osx": "zsh",
 
-  "window.title": "༼ つ ◕_◕ ༽つ ${dirty}${activeEditorShort}",
-
-  "extensions.ignoreRecommendations": true,
-
-  "files.eol": "\n",
-
+  "git.mergeEditor": true,
   "git.autofetch": true,
+
+  "window.title": "༼ つ ◕_◕ ༽つ ${dirty}${activeEditorShort}",
+  "extensions.ignoreRecommendations": true,
+  "files.eol": "\n",
 
   // LANGUAGES
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.inlayHints.parameterNames.enabled": "all",
   "typescript.inlayHints.parameterNames.enabled": "all",
+
+  // PRISMA
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
   },
@@ -67,7 +67,7 @@
     {
       "format": "expanded",
       "extensionName": ".css",
-      "savePath": "~/../dist/"
+      "savePath": "~/../dist"
     }
   ],
 
@@ -84,18 +84,17 @@
 
   // ERROR LENS
   "errorLens.fontWeight": "bold",
+
+  // LIVE SERVER
   "liveServer.settings.donotVerifyTags": true,
   "liveServer.settings.donotShowInfoMsg": true,
+
+  // FIG
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
-  "github.copilot.enable": {
-    "*": true,
-    "yaml": false,
-    "plaintext": false,
-    "markdown": false,
-    "typescriptreact": true
-  },
+
+  // YAML
   "yaml.format.enable": true,
   "redhat.telemetry.enabled": false
 }
