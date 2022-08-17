@@ -14,3 +14,5 @@
 	
 [core]
         autocrlf = false
+[commit]
+	gpgSign = true
