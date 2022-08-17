@@ -32,7 +32,7 @@
   "workbench.productIconTheme": "fluent-icons",
   "workbench.editor.closeOnFileDelete": true,
   "workbench.activityBar.visible": false,
-  "workbench.colorTheme": "Catppuccin",
+  "workbench.colorTheme": "Catppuccin Mocha",
 
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
