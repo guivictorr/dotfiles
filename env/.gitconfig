@@ -1,6 +1,7 @@
 [user]
         name = Guilherme Victor
         email = 55333929+guivictorr@users.noreply.github.com
+	signingKey = 684FFF8C37B22DE0
 	
 [alias]
 	a = add
@@ -13,6 +14,3 @@
 	
 [core]
         autocrlf = false
-	
-[commit]
-	gpgsign = false

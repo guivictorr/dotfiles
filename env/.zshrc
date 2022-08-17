@@ -45,3 +45,4 @@ export NVM_DIR="$HOME/.nvm"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
+export GPG_TTY=$(tty)
