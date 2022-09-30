@@ -10,7 +10,6 @@
   "editor.tabSize": 2,
   "editor.inlineSuggest.enabled": true,
   "editor.letterSpacing": 0.8,
-  "editor.formatOnSave": true,
   "editor.cursorStyle": "block",
   "editor.bracketPairColorization.enabled": false,
   "editor.guides.bracketPairs": false,
@@ -20,11 +19,13 @@
   "editor.cursorBlinking": "smooth",
   "editor.accessibilitySupport": "off",
   "editor.suggestSelection": "first",
+  "editor.suggestLineHeight": 32,
+  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
-    // "source.sortImports": true
+    "source.fixAll": true,
   },
 
+  "workbench.editor.enablePreview": false,
   "workbench.iconTheme": "eq-material-theme-icons-palenight",
   "workbench.statusBar.visible": true,
   "workbench.startupEditor": "welcomePageInEmptyWorkbench",
@@ -45,7 +46,7 @@
   "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.defaultProfile.osx": "zsh",
 
-  "git.mergeEditor": true,
+  "git.mergeEditor": false,
   "git.autofetch": true,
 
   "window.title": "༼ つ ◕_◕ ༽つ ${dirty}${activeEditorShort}",
@@ -97,5 +98,5 @@
 
   // YAML
   "yaml.format.enable": true,
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
 }

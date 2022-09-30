@@ -116,5 +116,9 @@
   {
     "key": "shift+alt+r",
     "command": "workbench.action.terminal.renamePanel"
+  },
+  {
+    "key": "shift+cmd+w",
+    "command": "editor.emmet.action.wrapWithAbbreviation"
   }
 ]
