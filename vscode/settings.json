@@ -20,9 +20,11 @@
   "editor.accessibilitySupport": "off",
   "editor.suggestSelection": "first",
   "editor.suggestLineHeight": 32,
+
+  // ATIVAR ESSAS DUAS PRA GARANTIR QUE O PRETTIER VAI FUNCIONAR
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
+    "source.fixAll": true
   },
 
   "workbench.editor.enablePreview": false,

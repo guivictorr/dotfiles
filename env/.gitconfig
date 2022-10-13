@@ -1,6 +1,6 @@
 [user]
-        name = Guilherme Victor
-        email = 55333929+guivictorr@users.noreply.github.com
+  name = Guilherme Victor
+  email = 55333929+guivictorr@users.noreply.github.com
 	signingKey = 684FFF8C37B22DE0
 	
 [alias]
@@ -10,7 +10,8 @@
 	ca = commit -a
 	aall = add .
 	fuck = reset --hard
+	db = !"git branch --merged | grep -vE 'main|master|\\*' | xargs -n 1 git branch -D"
 [core]
-        autocrlf = false
+  autocrlf = false
 [commit]
 	gpgSign = true
