@@ -11,8 +11,8 @@
   "editor.inlineSuggest.enabled": true,
   "editor.letterSpacing": 0.8,
   "editor.cursorStyle": "block",
-  "editor.bracketPairColorization.enabled": false,
-  "editor.guides.bracketPairs": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.suggest.showSnippets": true,
   "editor.suggest.preview": true,
@@ -28,14 +28,13 @@
   },
 
   "workbench.editor.enablePreview": false,
-  "workbench.iconTheme": "eq-material-theme-icons-palenight",
+  "workbench.iconTheme": "symbols",
   "workbench.statusBar.visible": true,
   "workbench.startupEditor": "welcomePageInEmptyWorkbench",
   "workbench.editor.labelFormat": "short",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.editor.closeOnFileDelete": true,
   "workbench.activityBar.visible": false,
-  "workbench.colorTheme": "Catppuccin Mocha",
 
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
@@ -101,4 +100,6 @@
   // YAML
   "yaml.format.enable": true,
   "redhat.telemetry.enabled": false,
+  "workbench.colorTheme": "Min Dark",
+  "editor.linkedEditing": true,
 }
