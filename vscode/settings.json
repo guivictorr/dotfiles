@@ -20,21 +20,22 @@
   "editor.accessibilitySupport": "off",
   "editor.suggestSelection": "first",
   "editor.suggestLineHeight": 32,
+  "editor.linkedEditing": true,
 
-  // ATIVAR ESSAS DUAS PRA GARANTIR QUE O PRETTIER VAI FUNCIONAR
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
 
   "workbench.editor.enablePreview": false,
-  "workbench.iconTheme": "symbols",
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.statusBar.visible": true,
   "workbench.startupEditor": "welcomePageInEmptyWorkbench",
   "workbench.editor.labelFormat": "short",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.editor.closeOnFileDelete": true,
   "workbench.activityBar.visible": false,
+  "workbench.colorTheme": "Min Dark",
 
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
@@ -53,6 +54,42 @@
   "window.title": "༼ つ ◕_◕ ༽つ ${dirty}${activeEditorShort}",
   "extensions.ignoreRecommendations": true,
   "files.eol": "\n",
+  "redhat.telemetry.enabled": false,
+
+  // MATERIAL ICONS
+  "material-icon-theme.activeIconPack": "nest",
+    "material-icon-theme.folders.associations": {
+    "adapters": "contract",
+    "grpc": "pipe",
+    "kube": "kubernetes",
+    "main": "lib",
+    "websockets": "pipe",
+    "implementations": "core",
+    "protos": "pipe",
+    "entities": "class",
+    "kafka": "pipe",
+    "use-cases": "functions",
+    "migrations": "tools",
+    "schemas": "class",
+    "useCases": "functions",
+    "eslint-config": "tools",
+    "typeorm": "database",
+    "_shared": "shared",
+    "mappers": "meta",
+    "fakes": "mock",
+    "modules": "components",
+    "subscribers": "messages",
+    "domain": "class",
+    "protocols": "contract",
+    "infra": "app",
+    "view-models": "views",
+    "presentation": "template",
+    "dtos": "typescript",
+    "http": "container",
+    "providers": "include",
+    "factories": "class",
+    "repositories": "mappings"
+  },
 
   // LANGUAGES
   "javascript.updateImportsOnFileMove.enabled": "always",
@@ -97,9 +134,14 @@
     "FIG_NEW_SESSION": "1"
   },
 
+  // SPELL CHECKER
+  "cSpell.userWords": [
+    "dtos",
+    "nestjs"
+  ],
+
   // YAML
   "yaml.format.enable": true,
-  "redhat.telemetry.enabled": false,
-  "workbench.colorTheme": "Min Dark",
-  "editor.linkedEditing": true,
+
+  // --- END ---
 }
