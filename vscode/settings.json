@@ -2,7 +2,7 @@
   // VSCODE
   "editor.fontFamily": "JetBrains Mono",
   "editor.fontLigatures": true,
-  "editor.wordWrap": "on",
+   "editor.wordWrap": "on",
   "editor.renderLineHighlight": "gutter",
   "editor.fontWeight": "600",
   "editor.lineHeight": 25,
@@ -46,6 +46,7 @@
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "block",
+  "terminal.integrated.gpuAcceleration": "off",
   "terminal.integrated.defaultProfile.osx": "zsh",
 
   "git.mergeEditor": false,
@@ -136,8 +137,13 @@
 
   // SPELL CHECKER
   "cSpell.userWords": [
+    "clsx",
     "dtos",
-    "nestjs"
+    "firestore",
+    "Guilherme",
+    "nestjs",
+    "Roboto",
+    "tailwindcss"
   ],
 
   // YAML
