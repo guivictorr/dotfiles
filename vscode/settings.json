@@ -148,6 +148,7 @@
 
   // YAML
   "yaml.format.enable": true,
+  "cSpell.language": "en,pt,pt-BR",
 
   // --- END ---
 }
