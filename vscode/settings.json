@@ -35,7 +35,6 @@
   "workbench.productIconTheme": "fluent-icons",
   "workbench.editor.closeOnFileDelete": true,
   "workbench.activityBar.visible": false,
-  "workbench.colorTheme": "Min Dark",
 
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
@@ -150,6 +149,7 @@
   // YAML
   "yaml.format.enable": true,
   "cSpell.language": "en,pt,pt-BR",
+  "workbench.colorTheme": "Min Dark",
 
   // --- END ---
 }
