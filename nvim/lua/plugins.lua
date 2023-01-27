@@ -15,7 +15,6 @@ require('packer').startup(function(use)
                'olivercederborg/poimandres.nvim',
                config = function()
                        require('poimandres').setup {}
-                       vim.cmd('colorscheme poimandres')
                end
        }
 end)
