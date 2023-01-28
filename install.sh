@@ -4,6 +4,10 @@ ln -s -f $PWD/env/.gitconfig ~/
 # zsh
 ln -s -f $PWD/env/.zshrc ~/
 
+# link vscode files
+ln -s -f $PWD/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+ln -s -f $PWD/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+
 # link nvim files
 dirs=(nvim nvim/lua nvim/plugin nvim/after/plugin)
 
@@ -16,8 +20,5 @@ for dir in "${dirs[@]}"; do
   done
 done
 
-# link vscode files
-ln -s -f $PWD/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-ln -s -f $PWD/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 
 
