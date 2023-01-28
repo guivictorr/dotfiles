@@ -1,3 +1,7 @@
+vim.opt.cmdheight = 0
+vim.opt.clipboard = "unnamedplus"
+vim.opt.mouse = "a"
+vim.opt.showmode = false
 vim.wo.number = true
 vim.o.relativenumber = true
 vim.opt.tabstop = 2

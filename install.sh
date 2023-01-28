@@ -1,3 +1,4 @@
+#!/bin/bash
 # git
 ln -s -f $PWD/env/.gitconfig ~/
 
