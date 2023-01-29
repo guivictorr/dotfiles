@@ -6,7 +6,7 @@ end
 
 packer.startup(function(use)
 	use 'wbthomason/packer.nvim'
-	use 'aktersnurra/no-clown-fiesta.nvim'
+	use 'guivictorr/no-clown-fiesta.nvim'
 	use 'jose-elias-alvarez/null-ls.nvim'
 	use 'nvim-lua/plenary.nvim'
 	use 'williamboman/mason.nvim'
