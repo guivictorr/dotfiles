@@ -20,6 +20,7 @@
   "editor.accessibilitySupport": "off",
   "editor.suggestSelection": "first",
   "editor.suggestLineHeight": 32,
+  "editor.lineNumbers": "relative",
   "editor.linkedEditing": true,
 
   "editor.formatOnSave": true,
@@ -28,7 +29,7 @@
   },
 
   "workbench.editor.enablePreview": false,
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "symbols",
   "workbench.statusBar.visible": true,
   "workbench.startupEditor": "welcomePageInEmptyWorkbench",
   "workbench.editor.labelFormat": "short",
@@ -150,6 +151,9 @@
   "yaml.format.enable": true,
   "cSpell.language": "en,pt,pt-BR",
   "workbench.colorTheme": "Min Dark",
-
+  "vim.cursorStylePerMode.insert": "line-thin",
+  "vim.useSystemClipboard": true,
+  "vim.targets.enable": true,
+  "vim.targets.bracketObjects.enable": true
   // --- END ---
 }

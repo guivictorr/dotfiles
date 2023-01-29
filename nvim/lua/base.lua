@@ -12,7 +12,8 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.wildignore:append { '*/node_modules/*' }
 vim.opt.backspace = { 'start', 'eol', 'indent' }
-vim.cmd [[ colorscheme poimandres ]]
+vim.opt.termguicolors = true
+vim.cmd [[colorscheme no-clown-fiesta]]
 vim.cmd [[
   augroup highlight_yank
   autocmd!

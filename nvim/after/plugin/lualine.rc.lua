@@ -5,8 +5,6 @@ end
 
 lualine.setup {
 	options = {
-		icons_enabled = true,
-		theme = 'poimandres',
 		disabled_filetypes = {},
 		-- section_separators = { left = '', right = '' },
 		-- component_separators = { left = '', right = '' },
@@ -34,4 +32,3 @@ lualine.setup {
 	tabline = {},
 	extensions = {},
 }
-
