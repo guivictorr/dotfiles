@@ -29,7 +29,7 @@ lualine.setup {
 		lualine_c = { {
 			'branch',
 			icon = { '', color = { fg = "#CC6666" } },
-			padding = { right = 1, left = 0 }
+			padding = { right = 1, left = 2 }
 		}, {
 			'diff',
 			symbols = { added = ' ', modified = ' ', removed = ' ' }
@@ -38,18 +38,21 @@ lualine.setup {
 			'diagnostics',
 			always_visible = true,
 			sections = { 'error', 'hint', 'warn' },
-			symbols = { error = ' ', hint = ' ', warn = ' ' }
+			symbols = { error = ' ', hint = ' ', warn = ' ' },
+			padding = { right = 2 }
 		} },
 		lualine_y = { {
 			'hostname',
 			icon = { ' ', color = { fg = '#CC6666' }, align = 'center' },
-			padding = { right = 2, left = 1 }
+			padding = { right = 2, left = 2 }
 		} },
 		lualine_z = { {
 			'location',
+			padding = { left = 1, right = 1 }
 		}, {
 			'progress',
-			icon = ''
+			icon = '',
+			padding = { right = 2 }
 		} },
 	},
 	tabline = {},
