@@ -5,11 +5,9 @@ end
 
 lualine.setup {
 	options = {
-		disabled_filetypes = {},
-		section_separators = {},
-		component_separators = {},
 		always_divide_middle = true,
-		globalstatus = false,
+		component_separators = {},
+		section_separators = {}
 	},
 	sections = {
 		lualine_a = { {
@@ -22,9 +20,10 @@ lualine.setup {
 			'filetype',
 			icon_only = true,
 			padding = { left = 2, right = 1 },
-			icon = { color = { fg = '#ff0000' } }
 		}, {
 			'filename',
+			file_status = false,
+			new_file_status = false,
 			padding = { left = 0, right = 2 }
 		} },
 		lualine_c = { {
@@ -52,14 +51,6 @@ lualine.setup {
 			'progress',
 			icon = ''
 		} },
-	},
-	inactive_sections = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = { 'filename' },
-		lualine_x = { 'location' },
-		lualine_y = {},
-		lualine_z = {},
 	},
 	tabline = {},
 	extensions = {},
