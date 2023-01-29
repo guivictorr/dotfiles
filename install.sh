@@ -14,7 +14,7 @@ dirs=(nvim nvim/lua nvim/plugin nvim/after/plugin)
 
 for dir in "${dirs[@]}"; do
   mkdir -p ~/.config/$dir
-  for file in $PWD/$dir/*; do
+  for file in ~/dotfiles/$dir/*; do
     if [ ! -d "$file" ]; then
       ln -s -f $file ~/.config/$dir/
     fi

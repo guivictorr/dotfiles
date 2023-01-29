@@ -12,21 +12,11 @@ vim.g.theme_switcher_loaded = true
 
 telescope.setup({
 	defaults = {
-		vimgrep_arguments = {
-			"rg",
-			"--color=never",
-			"--no-heading",
-			"--with-filename",
-			"--line-number",
-			"--column",
-			"--smart-case",
-		},
 		prompt_prefix = "   ",
 		selection_caret = "  ",
 		entry_prefix = "  ",
 		initial_mode = "insert",
 		selection_strategy = "reset",
-		sorting_strategy = "ascending",
 		layout_strategy = "horizontal",
 		layout_config = {
 			horizontal = {
@@ -37,16 +27,10 @@ telescope.setup({
 				height = 0.85,
 			},
 		},
-		file_sorter = require("telescope.sorters").get_fuzzy_file,
-		file_ignore_patterns = { "node_modules", "package-lock" },
-		generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
-		path_display = { "truncate" },
 		winblend = 0,
 		border = true,
 		borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
 		color_devicons = true,
-		set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
-
 		mappings = {
 			i = {
 				["<C-n>"] = actions.move_selection_next,
@@ -64,5 +48,12 @@ telescope.setup({
 			},
 		},
 	},
-	pickers = {},
+	extensions = {
+		file_browser = {
+			hijack_netrw = true,
+			cwd = vim.fn.expand('%:p:h'),
+			path = "%:p:h",
+			respect_gitignore = true
+		}
+	}
 })
