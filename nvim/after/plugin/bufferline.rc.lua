@@ -23,8 +23,11 @@ bufferline.setup({
 		max_prefix_length = 13,
 	},
 	highlights = {
+		fill = {
+			bg = '#101010'
+		},
 		buffer = {
-			bg = '#0a0a0b'
+			bg = '#101010'
 		},
 		buffer_selected = {
 			bg = '#151515',
@@ -32,7 +35,8 @@ bufferline.setup({
 			bold = true
 		},
 		separator = {
-			bg = '#0a0a0b',
+			bg = '#101010',
+			fg = '#101010'
 		},
 		indicator_selected = {
 			fg = '#cc6666'
