@@ -27,7 +27,6 @@ SPACESHIP_PROMPT_ORDER=(
   hg            # Mercurial section (hg_branch  + hg_status)
   exec_time     # Execution time
   line_sep      # Line break
-  vi_mode       # Vi-mode indicator
   jobs          # Background jobs indicator
   exit_code     # Exit code section
   char          # Prompt character
@@ -40,10 +39,10 @@ SPACESHIP_CHAR_SYMBOL="👁  "
 SPACESHIP_NODE_SHOW=true
 
 # ANDROID_SDK
-export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
-export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
-export JAVA_HOME=`/usr/libexec/java_home -v 11.0`
+# export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+# export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+# export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+# export JAVA_HOME=`/usr/libexec/java_home -v 11.0`
 
 # NVM Configuration
 export NVM_DIR="$HOME/.nvm"
@@ -51,11 +50,6 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 export GPG_TTY=$(tty)
-
-# The next line updates PATH for the Google Cloud SDK.
-# if [ -f '/Users/guilherme/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/guilherme/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-# The next line enables shell command completion for gcloud.
-# if [ -f '/Users/guilherme/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/guilherme/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
