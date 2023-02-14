@@ -6,6 +6,7 @@ end
 
 packer.startup(function(use)
 	use 'wbthomason/packer.nvim'
+	use 'manzeloth/live-server'
 	use 'guivictorr/no-clown-fiesta.nvim'
 	use 'jose-elias-alvarez/null-ls.nvim'
 	use 'nvim-lua/plenary.nvim'
@@ -24,13 +25,13 @@ packer.startup(function(use)
 	use 'akinsho/nvim-bufferline.lua'
 	use 'windwp/nvim-ts-autotag'
 	use {
-		'nvim-treesitter/nvim-treesitter',
-		run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+			'nvim-treesitter/nvim-treesitter',
+			run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
 	}
 	use 'nvim-telescope/telescope.nvim'
 	use 'nvim-telescope/telescope-file-browser.nvim'
 	use {
-		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+			'nvim-lualine/lualine.nvim',
+			requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	}
 end)

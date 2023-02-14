@@ -2,7 +2,7 @@
   // VSCODE
   "editor.fontFamily": "JetBrains Mono",
   "editor.fontLigatures": true,
-   "editor.wordWrap": "on",
+  "editor.wordWrap": "on",
   "editor.renderLineHighlight": "gutter",
   "editor.fontWeight": "600",
   "editor.lineHeight": 25,
@@ -13,7 +13,7 @@
   "editor.cursorStyle": "block",
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormat:wter": "esbenp.prettier-vscode",
   "editor.suggest.showSnippets": true,
   "editor.suggest.preview": true,
   "editor.cursorBlinking": "smooth",
@@ -42,7 +42,9 @@
   "explorer.confirmDragAndDrop": false,
 
   "terminal.integrated.fontWeight": "600",
-  "terminal.integrated.fontFamily": "JetBrains Mono",
+  "terminal.integrated.fontFamily": "Hack Nerd Font",
+  "terminal.integrated.lineHeight": 1.5,
+  "terminal.integrated.letterSpacing": 1.5,
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "block",
@@ -59,7 +61,7 @@
 
   // MATERIAL ICONS
   "material-icon-theme.activeIconPack": "nest",
-    "material-icon-theme.folders.associations": {
+  "material-icon-theme.folders.associations": {
     "adapters": "contract",
     "grpc": "pipe",
     "kube": "kubernetes",
@@ -154,6 +156,7 @@
   "vim.cursorStylePerMode.insert": "line-thin",
   "vim.useSystemClipboard": true,
   "vim.targets.enable": true,
-  "vim.targets.bracketObjects.enable": true
+  "vim.targets.bracketObjects.enable": true,
+  "npm.keybindingsChangedWarningShown": true
   // --- END ---
 }
