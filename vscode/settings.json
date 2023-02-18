@@ -13,7 +13,7 @@
   "editor.cursorStyle": "block",
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": true,
-  "editor.defaultFormat:wter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.suggest.showSnippets": true,
   "editor.suggest.preview": true,
   "editor.cursorBlinking": "smooth",
@@ -115,7 +115,7 @@
   ],
 
   // PRETTIER
-  "prettier.requireConfig": true,
+  // "prettier.requireConfig": true,
 
   // GIT LENS
   "gitlens.defaultDateFormat": null,
@@ -142,8 +142,6 @@
     "clsx",
     "dtos",
     "firestore",
-    "Guilherme",
-    "linka",
     "nestjs",
     "Roboto",
     "tailwindcss"
