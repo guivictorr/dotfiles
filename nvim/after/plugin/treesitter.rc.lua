@@ -15,6 +15,7 @@ ts.setup {
 	},
 	ensure_installed = {
 		"markdown",
+		"markdown_inline",
 		"tsx",
 		"json",
 		"yaml",

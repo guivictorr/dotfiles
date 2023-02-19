@@ -53,6 +53,7 @@ vim.keymap.set("n", "<leader>sf", function()
 		grouped = true,
 		previewer = false,
 		initial_mode = "normal",
-		layout_config = { height = 40 }
+		layout_config = { height = 40 },
+		git_status = false
 	})
 end)
