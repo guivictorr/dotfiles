@@ -1,42 +1,53 @@
-local status, packer = pcall(require, "packer")
-if (not status) then
-	print("Packer is not installed")
-	return
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
+vim.opt.rtp:prepend(lazypath)
 
-packer.startup(function(use)
-	use 'wbthomason/packer.nvim'
-	use 'manzeloth/live-server'
-	use 'guivictorr/no-clown-fiesta.nvim'
-	use 'jose-elias-alvarez/null-ls.nvim'
-	use 'nvim-lua/plenary.nvim'
-	use 'williamboman/mason.nvim'
-	use 'williamboman/mason-lspconfig.nvim'
-	use 'onsails/lspkind-nvim'
-	use 'hrsh7th/cmp-buffer'
-	use 'hrsh7th/cmp-nvim-lsp'
-	use 'hrsh7th/nvim-cmp'
-	use 'neovim/nvim-lspconfig'
-	use 'glepnir/lspsaga.nvim'
-	use 'L3MON4D3/LuaSnip'
-	use 'windwp/nvim-autopairs'
-	use 'norcalli/nvim-colorizer.lua'
-	use 'kyazdani42/nvim-web-devicons'
-	use 'lewis6991/gitsigns.nvim'
-	use 'akinsho/nvim-bufferline.lua'
-	use 'windwp/nvim-ts-autotag'
-	use {
+require("lazy").setup({
+	'manzeloth/live-server',
+	'guivictorr/no-clown-fiesta.nvim',
+	'jose-elias-alvarez/null-ls.nvim',
+	'nvim-lua/plenary.nvim',
+	{
+		"williamboman/mason.nvim",
+		build = ":MasonUpdate" -- :MasonUpdate updates registry contents
+	},
+	'williamboman/mason-lspconfig.nvim',
+	'onsails/lspkind-nvim',
+	'hrsh7th/cmp-buffer',
+	'hrsh7th/cmp-nvim-lsp',
+	'hrsh7th/nvim-cmp',
+	'neovim/nvim-lspconfig',
+	'glepnir/lspsaga.nvim',
+	'L3MON4D3/LuaSnip',
+	'windwp/nvim-autopairs',
+	'norcalli/nvim-colorizer.lua',
+	'kyazdani42/nvim-web-devicons',
+	'lewis6991/gitsigns.nvim',
+	'akinsho/nvim-bufferline.lua',
+	'windwp/nvim-ts-autotag',
+	{
 		'nvim-treesitter/nvim-treesitter',
-		run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
-	}
-	use 'nvim-telescope/telescope.nvim'
-	use 'nvim-telescope/telescope-file-browser.nvim'
-	use {
+		opt = true,
+		run = ':TSUpdate',
+		event = "BufRead",
+	},
+	'nvim-telescope/telescope.nvim',
+	'nvim-telescope/telescope-file-browser.nvim',
+	{
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-	}
-	use {
+	},
+	{
 		"startup-nvim/startup.nvim",
 		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 	}
-end)
+})

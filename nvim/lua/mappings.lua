@@ -1,4 +1,3 @@
-local builtin = require('telescope.builtin')
 local keymap = vim.keymap
 
 vim.g.mapleader = " "
@@ -21,12 +20,6 @@ keymap.set('', 'sh', '<C-w>h')
 keymap.set('', 'sk', '<C-w>k')
 keymap.set('', 'sj', '<C-w>j')
 keymap.set('', 'sl', '<C-w>l')
-
--- Telescope
-keymap.set('n', '<leader>ff', builtin.find_files, {})
-keymap.set('n', '<leader>fg', builtin.live_grep, {})
-keymap.set('n', '<leader>fb', builtin.buffers, {})
-keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 -- Bufferline
 keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
