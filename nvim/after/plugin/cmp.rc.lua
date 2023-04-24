@@ -1,7 +1,6 @@
 local status, cmp = pcall(require, "cmp")
 if (not status) then return end
 local lspkind = require 'lspkind'
-
 local function formatForTailwindCSS(entry, vim_item)
 	if vim_item.kind == 'Color' and entry.completion_item.documentation then
 		local _, _, r, g, b = string.find(entry.completion_item.documentation, '^rgb%((%d+), (%d+), (%d+)')
@@ -21,34 +20,40 @@ local function formatForTailwindCSS(entry, vim_item)
 end
 
 cmp.setup({
-		snippet = {
-				expand = function(args)
-					require('luasnip').lsp_expand(args.body)
-				end,
-		},
-		mapping = cmp.mapping.preset.insert({
-				['<C-d>'] = cmp.mapping.scroll_docs( -4),
-				['<C-f>'] = cmp.mapping.scroll_docs(4),
-				['<C-p'] = cmp.mapping.complete(),
-				['<C-e>'] = cmp.mapping.close(),
-				['<s-tab>'] = cmp.mapping.select_prev_item(),
-				['<tab>'] = cmp.mapping.select_next_item(),
-				['<CR>'] = cmp.mapping.confirm({
-						behavior = cmp.ConfirmBehavior.Replace,
-						select = true
-				}),
+	snippet = {
+		expand = function(args)
+			require('luasnip').lsp_expand(args.body)
+		end,
+	},
+	window = {
+		completion = cmp.config.window.bordered({
+			scrollbar = false,
 		}),
-		sources = cmp.config.sources({
-				{ name = 'nvim_lsp' },
-				{ name = 'buffer' },
+		documentation = cmp.config.window.bordered(),
+	},
+	mapping = cmp.mapping.preset.insert({
+		['<C-d>'] = cmp.mapping.scroll_docs(-4),
+		['<C-f>'] = cmp.mapping.scroll_docs(4),
+		['<C-p'] = cmp.mapping.complete(),
+		['<C-e>'] = cmp.mapping.close(),
+		['<s-tab>'] = cmp.mapping.select_prev_item(),
+		['<tab>'] = cmp.mapping.select_next_item(),
+		['<CR>'] = cmp.mapping.confirm({
+			behavior = cmp.ConfirmBehavior.Replace,
+			select = true
 		}),
-		formatting = {
-				format = lspkind.cmp_format({
-						maxwidth = 50,
-						before = function(entry, vim_item)
-							vim_item = formatForTailwindCSS(entry, vim_item)
-							return vim_item
-						end
-				})
-		}
+	}),
+	sources = cmp.config.sources({
+		{ name = 'nvim_lsp' },
+		{ name = 'buffer' },
+	}),
+	formatting = {
+		format = lspkind.cmp_format({
+			maxwidth = 50,
+			before = function(entry, vim_item)
+				vim_item = formatForTailwindCSS(entry, vim_item)
+				return vim_item
+			end
+		})
+	}
 })
