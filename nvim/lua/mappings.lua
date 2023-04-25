@@ -25,3 +25,7 @@ keymap.set('', 'sl', '<C-w>l')
 keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
 keymap.set('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', {})
 keymap.set('n', '<leader>w', '<Cmd>bdelete<CR>')
+
+-- Center cursor on scroll
+keymap.set('n', '<C-d>', '<C-d>zz')
+keymap.set('n', '<C-u>', '<C-u>zz')
