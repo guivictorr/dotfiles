@@ -3,6 +3,8 @@ if not present then
 	return
 end
 
+local foreground = "#CC6666"
+
 lualine.setup {
 	options = {
 		always_divide_middle = true,
@@ -26,15 +28,15 @@ lualine.setup {
 			new_file_status = false,
 			padding = { left = 0, right = 2 },
 			symbols = {
-				modified = '[+]', -- Text to show when the file is modified.
-				readonly = '[-]', -- Text to show when the file is non-modifiable or readonly.
+				modified = '[+]',    -- Text to show when the file is modified.
+				readonly = '[-]',    -- Text to show when the file is non-modifiable or readonly.
 				unnamed = '  [No Name]', -- Text to show for unnamed buffers.
 				newfile = '  [New]', -- Text to show for newly created file before first write
 			}
 		} },
 		lualine_c = { {
 			'branch',
-			icon = { '', color = { fg = "#CC6666" } },
+			icon = { '', color = { fg = foreground } },
 			padding = { right = 1, left = 2 }
 		}, {
 			'diff',
@@ -49,7 +51,7 @@ lualine.setup {
 		} },
 		lualine_y = { {
 			'hostname',
-			icon = { ' ', color = { fg = '#CC6666' }, align = 'center' },
+			icon = { ' ', color = { fg = foreground }, align = 'center' },
 			padding = { right = 2, left = 2 }
 		} },
 		lualine_z = { {
