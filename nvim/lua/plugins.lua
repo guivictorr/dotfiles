@@ -12,19 +12,30 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	'manzeloth/live-server',          -- To run simple html projects
+	{
+		"dstein64/vim-startuptime",
+		-- lazy-load on a command
+		cmd = "StartupTime",
+		-- init is called during startup. Configuration for vim plugins typically should be set in an init function
+		init = function()
+			vim.g.startuptime_tries = 10
+		end,
+	},
 	'guivictorr/no-clown-fiesta.nvim', -- Theme
 	'jose-elias-alvarez/null-ls.nvim', -- Formatting and Diagnostic
-	'nvim-lua/plenary.nvim',
 	{
-		"williamboman/mason.nvim", -- Portable package manager
-		build = ":MasonUpdate"   -- :MasonUpdate updates registry contents
+		"williamboman/mason.nvim",      -- Portable package manager
+		build = ":MasonUpdate"          -- :MasonUpdate updates registry contents
 	},
 	'williamboman/mason-lspconfig.nvim',
 	'onsails/lspkind-nvim', -- Pictograms
-	'hrsh7th/nvim-cmp',    -- Autocomplete
-	'hrsh7th/cmp-buffer',
-	'hrsh7th/cmp-nvim-lsp',
+	{
+		'hrsh7th/nvim-cmp',  -- Autocomplete
+		dependencies = {
+			'hrsh7th/cmp-buffer',
+			'hrsh7th/cmp-nvim-lsp',
+		}
+	},
 	'neovim/nvim-lspconfig', -- Language server
 	{
 		'glepnir/lspsaga.nvim',
@@ -35,27 +46,38 @@ require("lazy").setup({
 			{ "nvim-treesitter/nvim-treesitter" }
 		}
 	},
-	'L3MON4D3/LuaSnip',
 	'windwp/nvim-autopairs',
 	'norcalli/nvim-colorizer.lua',
-	'nvim-tree/nvim-web-devicons',
+	{
+		'nvim-tree/nvim-web-devicons',
+		lazy = true
+	},
 	'lewis6991/gitsigns.nvim',    -- Git signs
 	'akinsho/nvim-bufferline.lua', -- Tabs
-	'windwp/nvim-ts-autotag',
+	{
+		'windwp/nvim-ts-autotag',
+		lazy = true
+	},
+	'L3MON4D3/LuaSnip',
 	{
 		'nvim-treesitter/nvim-treesitter', -- Code highlight
-		opt = true,
-		run = ':TSUpdate',
+		lazy = true,
+		build = ':TSUpdate',
 		event = "BufRead",
 	},
-	'nvim-telescope/telescope.nvim',             -- File finder
+	{
+		'nvim-telescope/telescope.nvim', -- File finder
+		dependencies = {
+			'nvim-lua/plenary.nvim',
+		}
+	},
 	'nvim-telescope/telescope-file-browser.nvim', -- File browser
 	{
 		'nvim-lualine/lualine.nvim',               -- Statusline
-		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+		dependencies = { 'nvim-tree/nvim-web-devicons', lazy = true }
 	},
 	{
 		"startup-nvim/startup.nvim", -- Startup screen
-		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 	}
 })
