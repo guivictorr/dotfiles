@@ -50,13 +50,11 @@ require("lazy").setup({
 	'norcalli/nvim-colorizer.lua',
 	{
 		'nvim-tree/nvim-web-devicons',
-		lazy = true
 	},
 	'lewis6991/gitsigns.nvim',    -- Git signs
 	'akinsho/nvim-bufferline.lua', -- Tabs
 	{
 		'windwp/nvim-ts-autotag',
-		lazy = true
 	},
 	'L3MON4D3/LuaSnip',
 	{
