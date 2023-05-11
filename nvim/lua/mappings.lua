@@ -22,9 +22,9 @@ keymap.set('', 'sj', '<C-w>j')
 keymap.set('', 'sl', '<C-w>l')
 
 -- Bufferline
-keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
-keymap.set('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', {})
-keymap.set('n', '<leader>w', '<Cmd>bdelete<CR>')
+keymap.set('n', '<Tab>', '<Cmd>:bnext<CR>', {})
+keymap.set('n', '<S-Tab>', '<Cmd>:bprevious<CR>', {})
+keymap.set('n', '<leader>w', '<Cmd>:bd<CR>')
 
 -- Center cursor on scroll
 keymap.set('n', '<C-d>', '<C-d>zz')

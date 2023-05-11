@@ -3,8 +3,6 @@ if not present then
 	return
 end
 
-local foreground = "#CC6666"
-
 lualine.setup {
 	options = {
 		always_divide_middle = true,
@@ -36,7 +34,7 @@ lualine.setup {
 		} },
 		lualine_c = { {
 			'branch',
-			icon = { '', color = { fg = foreground } },
+			icon = { '' },
 			padding = { right = 1, left = 2 }
 		}, {
 			'diff',
@@ -51,7 +49,7 @@ lualine.setup {
 		} },
 		lualine_y = { {
 			'hostname',
-			icon = { ' ', color = { fg = foreground }, align = 'center' },
+			icon = { ' ', align = 'center' },
 			padding = { right = 2, left = 2 }
 		} },
 		lualine_z = { {

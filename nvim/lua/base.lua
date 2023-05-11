@@ -1,4 +1,5 @@
 vim.opt.cmdheight = 0
+vim.opt.termguicolors = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.mouse = "a"
 vim.opt.numberwidth = 1
@@ -13,7 +14,6 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.wildignore:append { '*/node_modules/*' }
 vim.opt.backspace = { 'start', 'eol', 'indent' }
-vim.opt.termguicolors = true
 vim.cmd [[
   augroup highlight_yank
   autocmd!

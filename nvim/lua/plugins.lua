@@ -21,7 +21,7 @@ require("lazy").setup({
 			vim.g.startuptime_tries = 10
 		end,
 	},
-	'guivictorr/no-clown-fiesta.nvim', -- Theme
+	'rebelot/kanagawa.nvim',
 	'jose-elias-alvarez/null-ls.nvim', -- Formatting and Diagnostic
 	{
 		"williamboman/mason.nvim",      -- Portable package manager
@@ -47,12 +47,10 @@ require("lazy").setup({
 		}
 	},
 	'windwp/nvim-autopairs',
-	'norcalli/nvim-colorizer.lua',
 	{
 		'nvim-tree/nvim-web-devicons',
 	},
-	'lewis6991/gitsigns.nvim',    -- Git signs
-	'akinsho/nvim-bufferline.lua', -- Tabs
+	'lewis6991/gitsigns.nvim', -- Git signs
 	{
 		'windwp/nvim-ts-autotag',
 	},
