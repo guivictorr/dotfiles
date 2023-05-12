@@ -14,26 +14,46 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{
 		"dstein64/vim-startuptime",
-		-- lazy-load on a command
 		cmd = "StartupTime",
-		-- init is called during startup. Configuration for vim plugins typically should be set in an init function
-		init = function()
-			vim.g.startuptime_tries = 10
+	},
+	{
+		'rebelot/kanagawa.nvim',
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require('kanagawa').setup {
+				colors = {
+					theme = { all = { ui = { bg_gutter = 'none' } } }
+				}
+			}
+			vim.cmd [[colorscheme kanagawa]]
 		end,
 	},
-	'rebelot/kanagawa.nvim',
 	'jose-elias-alvarez/null-ls.nvim', -- Formatting and Diagnostic
 	{
-		"williamboman/mason.nvim",      -- Portable package manager
-		build = ":MasonUpdate"          -- :MasonUpdate updates registry contents
+		"williamboman/mason.nvim",      -- Portable package manager,
+		config = function()
+			require('mason').setup()
+		end,
+		build = ":MasonUpdate", -- :MasonUpdate updates registry contents
+		dependencies = {
+			{
+				'williamboman/mason-lspconfig.nvim',
+				config = function()
+					require('mason-lspconfig').setup {
+						automatic_installation = true
+					}
+				end
+			}
+		}
 	},
-	'williamboman/mason-lspconfig.nvim',
 	'onsails/lspkind-nvim', -- Pictograms
 	{
 		'hrsh7th/nvim-cmp',  -- Autocomplete
 		dependencies = {
 			'hrsh7th/cmp-buffer',
 			'hrsh7th/cmp-nvim-lsp',
+			'L3MON4D3/LuaSnip',
 		}
 	},
 	'neovim/nvim-lspconfig', -- Language server
@@ -43,37 +63,42 @@ require("lazy").setup({
 		dependencies = {
 			{ "nvim-tree/nvim-web-devicons" },
 			--Please make sure you install markdown and markdown_inline parser
-			{ "nvim-treesitter/nvim-treesitter" }
+			{
+				'nvim-treesitter/nvim-treesitter', -- Code highlight
+				lazy = true,
+				build = ':TSUpdate',
+				event = "BufRead",
+			},
 		}
 	},
-	'windwp/nvim-autopairs',
 	{
-		'nvim-tree/nvim-web-devicons',
+		'windwp/nvim-autopairs',
+		opts = {
+			disable_filetype = { "TelescopePrompt", "vim" },
+		}
 	},
 	'lewis6991/gitsigns.nvim', -- Git signs
+	'windwp/nvim-ts-autotag',
 	{
-		'windwp/nvim-ts-autotag',
-	},
-	'L3MON4D3/LuaSnip',
-	{
-		'nvim-treesitter/nvim-treesitter', -- Code highlight
-		lazy = true,
-		build = ':TSUpdate',
-		event = "BufRead",
-	},
-	{
-		'nvim-telescope/telescope.nvim', -- File finder
-		dependencies = {
-			'nvim-lua/plenary.nvim',
+		'nvim-telescope/telescope-file-browser.nvim', -- File browser
+		keys = {
+			{ "<leader>sf" }
 		}
 	},
-	'nvim-telescope/telescope-file-browser.nvim', -- File browser
 	{
-		'nvim-lualine/lualine.nvim',               -- Statusline
-		dependencies = { 'nvim-tree/nvim-web-devicons', lazy = true }
+		'nvim-lualine/lualine.nvim', -- Statusline
+		dependencies = { 'nvim-tree/nvim-web-devicons' }
+	},
+	{
+		"nvim-telescope/telescope.nvim",
+		keys = {
+			{ "<leader>ff", "<leader>fg" }
+		},
+		dependencies = {
+			"nvim-lua/plenary.nvim"
+		}
 	},
 	{
 		"startup-nvim/startup.nvim", -- Startup screen
-		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 	}
 })
