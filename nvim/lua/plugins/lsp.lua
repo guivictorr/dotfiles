@@ -13,6 +13,12 @@ return {
 			require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 			lsp.setup()
+
+			local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+			for type, icon in pairs(signs) do
+				local hl = "DiagnosticSign" .. type
+				vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+			end
 		end,
 		dependencies = {
 			-- LSP Support
@@ -61,7 +67,12 @@ return {
 		"glepnir/lspsaga.nvim",
 		event = "LspAttach",
 		config = function()
-			require("lspsaga").setup({})
+			require("lspsaga").setup({
+				symbol_in_winbar = {
+					enable = true,
+					separator = "  ",
+				},
+			})
 
 			local opts = { noremap = true, silent = true }
 			vim.keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
