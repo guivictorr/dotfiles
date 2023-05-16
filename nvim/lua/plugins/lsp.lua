@@ -1,3 +1,33 @@
+local kind_icons = {
+	Text = "",
+	Method = "󰆧",
+	Function = "󰊕",
+	Constructor = "",
+	Field = "󰇽",
+	Variable = "",
+	Class = "󰠱",
+	Interface = "",
+	Module = "",
+	Property = "",
+	Unit = "",
+	Value = "󰎠",
+	Enum = "",
+	Keyword = "󰌋",
+	Snippet = "",
+	Color = "󰏘",
+	File = "󰈙",
+	Reference = "",
+	Folder = "󰉋",
+	EnumMember = "",
+	Constant = "󰏿",
+	Struct = "",
+	Event = "",
+	Operator = "󰆕",
+	TypeParameter = "󰅲",
+}
+
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+
 return {
 	{
 		'VonHeikemen/lsp-zero.nvim',
@@ -14,15 +44,46 @@ return {
 
 			lsp.setup()
 
-			local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 			for type, icon in pairs(signs) do
 				local hl = "DiagnosticSign" .. type
 				vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 			end
+
+			local cmp = require('cmp')
+			cmp.setup({
+				formatting = {
+					fields = { 'kind', 'abbr', 'menu' },
+					format = function(_, vim_item)
+						local kind = vim_item.kind
+						vim_item.kind = (kind_icons[kind] or "?") .. " "
+						vim_item.menu = " " .. kind .. " "
+						return vim_item
+					end
+				},
+				window = {
+					completion = cmp.config.window.bordered({
+						scrollbar = false,
+						winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+					}),
+					documentation = cmp.config.window.bordered()
+				},
+				mapping = cmp.mapping.preset.insert({
+					['<C-d>'] = cmp.mapping.scroll_docs(-4),
+					['<C-f>'] = cmp.mapping.scroll_docs(4),
+					['<C-p'] = cmp.mapping.complete(),
+					['<C-e>'] = cmp.mapping.close(),
+					['<s-tab>'] = cmp.mapping.select_prev_item(),
+					['<tab>'] = cmp.mapping.select_next_item(),
+					['<CR>'] = cmp.mapping.confirm({
+						behavior = cmp.ConfirmBehavior.Replace,
+						select = true
+					}),
+				}),
+			})
 		end,
 		dependencies = {
 			-- LSP Support
-			{ 'neovim/nvim-lspconfig' }, -- Required
+			{ 'neovim/nvim-lspconfig' }, -- Requiredlsp
 			{
 				-- Optional
 				'williamboman/mason.nvim',
@@ -32,32 +93,8 @@ return {
 
 			-- Autocompletion
 			{
-				'hrsh7th/nvim-cmp',
-				config = function()
-					local cmp = require('cmp')
-					cmp.setup {
-						window = {
-							completion = cmp.config.window.bordered({
-								scrollbar = false,
-								winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
-							}),
-							documentation = cmp.config.window.bordered(),
-						},
-						mapping = cmp.mapping.preset.insert({
-							['<C-d>'] = cmp.mapping.scroll_docs(-4),
-							['<C-f>'] = cmp.mapping.scroll_docs(4),
-							['<C-p'] = cmp.mapping.complete(),
-							['<C-e>'] = cmp.mapping.close(),
-							['<s-tab>'] = cmp.mapping.select_prev_item(),
-							['<tab>'] = cmp.mapping.select_next_item(),
-							['<CR>'] = cmp.mapping.confirm({
-								behavior = cmp.ConfirmBehavior.Replace,
-								select = true
-							}),
-						}),
-					}
-				end
-			},                       -- Required
+				'hrsh7th/nvim-cmp'
+			},
 			{ 'hrsh7th/cmp-buffer' },
 			{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
 			{ 'L3MON4D3/LuaSnip' },  -- Required
