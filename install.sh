@@ -10,7 +10,7 @@ ln -s ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/s
 ln -s ~/dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 
 # link nvim files
-dirs=(nvim nvim/lua nvim/plugin)
+dirs=(nvim nvim/lua nvim/lua/plugins)
 
 for dir in "${dirs[@]}"; do
   mkdir -p ~/.config/$dir

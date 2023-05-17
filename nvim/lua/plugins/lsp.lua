@@ -123,47 +123,45 @@ return {
 			-- code action
 			local codeaction = require("lspsaga.codeaction")
 			vim.keymap.set("n", "<leader>ca", function() codeaction:code_action() end, { silent = true })
+
+			-- treesitter
+			local ts = require('nvim-treesitter.configs')
+			ts.setup {
+				autopairs = {
+					enable = true
+				},
+				highlight = {
+					enable = true,
+					disable = {},
+				},
+				indent = {
+					enable = true,
+					disable = {},
+				},
+				ensure_installed = {
+					"markdown",
+					"markdown_inline",
+					"tsx",
+					"json",
+					"yaml",
+					"css",
+					"html",
+					"lua",
+					"javascript",
+					"typescript",
+					"tsx"
+				},
+				autotag = {
+					enable = true,
+				},
+			}
+			local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+			parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
 		end,
 		dependencies = {
-			{ "nvim-tree/nvim-web-devicons" },
-			--Please make sure you install markdown and markdown_inline parser
-			{
-				"nvim-treesitter/nvim-treesitter",
-				config = function()
-					local ts = require('nvim-treesitter.configs')
-					ts.setup {
-						autopairs = {
-							enable = true
-						},
-						highlight = {
-							enable = true,
-							disable = {},
-						},
-						indent = {
-							enable = true,
-							disable = {},
-						},
-						ensure_installed = {
-							"markdown",
-							"markdown_inline",
-							"tsx",
-							"json",
-							"yaml",
-							"css",
-							"html",
-							"lua",
-							"javascript",
-							"typescript",
-							"tsx"
-						},
-						autotag = {
-							enable = true,
-						},
-					}
-					local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
-					parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
-				end
-			}
+			"nvim-tree/nvim-web-devicons",
+			"nvim-treesitter/nvim-treesitter",
+
 		}
 	},
 }
