@@ -1,8 +1,9 @@
 return {
+	'f-person/git-blame.nvim',
 	{
 		'lewis6991/gitsigns.nvim',
-		opts = {
-			current_line_blame = true
-		}
+		config = function()
+			require('gitsigns').setup()
+		end
 	}
 }

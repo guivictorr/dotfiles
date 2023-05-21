@@ -1,4 +1,5 @@
 vim.opt.cmdheight = 0
+vim.blamer_enabled = 1
 vim.opt.termguicolors = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.mouse = "a"
