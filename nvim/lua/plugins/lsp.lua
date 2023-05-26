@@ -32,12 +32,39 @@ return {
 	{
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v2.x',
+		dependencies = {
+			-- LSP Support
+			{ 'neovim/nvim-lspconfig' }, -- Required
+			{
+				-- Optional
+				'williamboman/mason.nvim',
+				build = function()
+					pcall(vim.cmd, 'MasonUpdate')
+				end,
+			},
+			{ 'williamboman/mason-lspconfig.nvim' }, -- Optional
+
+			-- Autocompletion
+			{ 'hrsh7th/nvim-cmp' },
+			{ 'hrsh7th/cmp-buffer' },
+			{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
+			{ 'L3MON4D3/LuaSnip' },  -- Required
+		},
 		config = function()
-			local lsp = require('lsp-zero').preset({})
+			local lsp = require('lsp-zero').preset("recommended")
 
 			lsp.on_attach(function(client, bufnr)
-				lsp.default_keymaps({ buffer = bufnr })
+				local opts = { buffer = bufnr, remap = false }
 				lsp.buffer_autoformat()
+				vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
+				vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
+				vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
+				vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
+				vim.keymap.set("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<cr>", opts)
+				vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+				vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+				vim.keymap.set("n", "<C-j>", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts)
+				vim.keymap.set("n", "<C-k>", "<cmd>lua vim.diagnostic.goto_next()<cr>", opts)
 			end)
 
 			require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
@@ -80,88 +107,7 @@ return {
 					}),
 				}),
 			})
-		end,
-		dependencies = {
-			-- LSP Support
-			{ 'neovim/nvim-lspconfig' }, -- Requiredlsp
-			{
-				-- Optional
-				'williamboman/mason.nvim',
-				build = ":MasonUpdate"
-			},
-			{ 'williamboman/mason-lspconfig.nvim' }, -- Optional
+		end
 
-			-- Autocompletion
-			{
-				'hrsh7th/nvim-cmp'
-			},
-			{ 'hrsh7th/cmp-buffer' },
-			{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
-			{ 'L3MON4D3/LuaSnip' },  -- Required
-		}
-	},
-	{
-		"glepnir/lspsaga.nvim",
-		event = "LspAttach",
-		config = function()
-			require("lspsaga").setup({
-				symbol_in_winbar = {
-					enable = true,
-					separator = "  ",
-				},
-			})
-
-			local opts = { noremap = true, silent = true }
-			vim.keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
-			vim.keymap.set('n', '<C-k>', '<Cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
-			vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
-			vim.keymap.set('n', 'gd', '<Cmd>Lspsaga goto_definition<CR>', opts)
-			vim.keymap.set('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>', opts)
-			vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
-			vim.keymap.set('n', 'gf', '<Cmd>Lspsaga lsp_finder<CR>', opts)
-
-			-- code action
-			local codeaction = require("lspsaga.codeaction")
-			vim.keymap.set("n", "<leader>ca", function() codeaction:code_action() end, { silent = true })
-
-			-- treesitter
-			local ts = require('nvim-treesitter.configs')
-			ts.setup {
-				autopairs = {
-					enable = true
-				},
-				highlight = {
-					enable = true,
-					disable = {},
-				},
-				indent = {
-					enable = true,
-					disable = {},
-				},
-				ensure_installed = {
-					"markdown",
-					"markdown_inline",
-					"tsx",
-					"json",
-					"yaml",
-					"css",
-					"html",
-					"lua",
-					"javascript",
-					"typescript",
-					"tsx"
-				},
-				autotag = {
-					enable = true,
-				},
-			}
-			local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
-			parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
-		end,
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-			"nvim-treesitter/nvim-treesitter",
-
-		}
 	},
 }

@@ -1,12 +1,12 @@
 return {
 	{
-		"nvim-telescope/telescope-file-browser.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-	},
-
-	{
 		'nvim-telescope/telescope.nvim',
 		tag = '0.1.1',
+		dependencies = {
+			"nvim-telescope/telescope-file-browser.nvim",
+			'nvim-lua/plenary.nvim',
+			build = 'make',
+		},
 		config = function()
 			local telescope = require('telescope')
 			local actions = require("telescope.actions")
@@ -42,20 +42,21 @@ return {
 				},
 			})
 
-			local function telescope_buffer_dir()
-				return vim.fn.expand('%:p:h')
-			end
-
-			telescope.load_extension("file_browser")
-
 			local builtin = require('telescope.builtin')
 			vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 			vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 			vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 			vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
+
+			require('telescope').load_extension("file_browser")
+
+			local function telescope_buffer_dir()
+				return vim.fn.expand('%:p:h')
+			end
+
 			vim.keymap.set("n", "<leader>sf", function()
-				telescope.extensions.file_browser.file_browser({
+				require('telescope').extensions.file_browser.file_browser({
 					path = '%:p:h',
 					cwd = telescope_buffer_dir(),
 					respect_gitignore = false,
@@ -68,6 +69,5 @@ return {
 				})
 			end)
 		end,
-		dependencies = { 'nvim-lua/plenary.nvim' }
 	}
 }
