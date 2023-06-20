@@ -3,7 +3,26 @@ return {
     "hrsh7th/nvim-cmp",
     opts = function(_, opts)
       local cmp = require("cmp")
-      opts.mapping = {
+
+      opts.window = {
+        completion = cmp.config.window.bordered({}),
+        documentation = cmp.config.window.bordered({}),
+      }
+
+      opts.formatting = vim.tbl_extend("force", opts.formatting, {
+        fields = { "kind", "abbr", "menu" },
+        format = function(_, item)
+          local icons = require("lazyvim.config").icons.kinds
+          local kind = item.kind
+
+          item.kind = (icons[kind] or "?") .. " "
+          item.menu = " (" .. kind .. ")"
+
+          return item
+        end,
+      })
+
+      opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<C-d>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-p>"] = cmp.mapping.complete(),
@@ -14,7 +33,7 @@ return {
           behavior = cmp.ConfirmBehavior.Replace,
           select = true,
         }),
-      }
+      })
     end,
   },
 }
