@@ -25,10 +25,8 @@ return {
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<C-d>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
-        ["<C-p>"] = cmp.mapping.complete(),
+        ["<C-l>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.close(),
-        ["<s-tab>"] = cmp.mapping.select_prev_item(),
-        ["<tab>"] = cmp.mapping.select_next_item(),
         ["<CR>"] = cmp.mapping.confirm({
           behavior = cmp.ConfirmBehavior.Replace,
           select = true,
