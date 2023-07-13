@@ -5,9 +5,12 @@ ln -s ~/dotfiles/env/.gitconfig ~/
 ln -s ~/dotfiles/env/.zshrc ~/
 ln -s ~/dotfiles/env/.spaceshiprc.zsh ~/
 
+# tmux
+ln -s ~/dotfiles/tmux/.tmux.conf ~/
+
 # link vscode files
-ln -s ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-ln -s ~/dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+#ln -s ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+#ln -s ~/dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 
 # link nvim files
 dirs=(nvim nvim/lua nvim/lua/plugins nvim/lua/config)
