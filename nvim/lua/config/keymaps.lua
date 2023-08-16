@@ -16,15 +16,6 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 -- Split
 keymap.set("n", "ss", ":split<Return><C-w>w")
 keymap.set("n", "sv", ":vsplit<Return><C-w>w")
-keymap.set("n", "<Space>", "<C-w>w")
-keymap.set("", "sh", "<C-w>h")
-keymap.set("", "sk", "<C-w>k")
-keymap.set("", "sj", "<C-w>j")
-keymap.set("", "sl", "<C-w>l")
-
--- Bufferline
-keymap.set("n", "<Tab>", "<Cmd>:bnext<CR>", {})
-keymap.set("n", "<S-Tab>", "<Cmd>:bprevious<CR>", {})
 
 -- Center cursor on scroll
 keymap.set("n", "<C-d>", "<C-d>zz")
