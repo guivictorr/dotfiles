@@ -77,7 +77,7 @@ return {
           },
         },
         tabline = {},
-        extensions = {},
+        extensions = { "neo-tree", "lazy" },
       }
     end,
   },
