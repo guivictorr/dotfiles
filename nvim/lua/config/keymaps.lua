@@ -6,6 +6,10 @@ local keymap = vim.keymap
 -- Do not yank with x
 keymap.set("n", "x", '"_x')
 
+-- In visual mode replace p to P
+-- https://vi.stackexchange.com/questions/39149/how-to-stop-neovim-from-yanking-text-on-pasting-over-selection
+keymap.set("x", "p", "P")
+
 -- Increment/decrement
 keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
