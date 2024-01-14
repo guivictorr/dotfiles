@@ -1,8 +1,3 @@
-local colors = {
-  fg = "#76787d",
-  bg = "#252829",
-}
-
 return {
   {
     "akinsho/bufferline.nvim",
@@ -42,21 +37,36 @@ return {
           bg = "",
         },
         tab_separator = {
-          fg = colors.bg,
+          fg = {
+            attribute = "fg",
+            highlight = "Normal",
+          },
           bg = "",
         },
         tab_separator_selected = {
-          fg = colors.bg,
+          fg = {
+            attribute = "fg",
+            highlight = "Normal",
+          },
           bg = "",
-          sp = colors.fg,
+          sp = {
+            attribute = "sp",
+            highlight = "Normal",
+          },
         },
         close_button = {
           bg = "",
-          fg = colors.fg,
+          fg = {
+            attribute = "fg",
+            highlight = "Normal",
+          },
         },
         close_button_visible = {
           bg = "",
-          fg = colors.fg,
+          fg = {
+            attribute = "fg",
+            highlight = "Normal",
+          },
         },
         close_button_selected = {
           fg = { attribute = "fg", highlight = "StatusLineNonText" },
@@ -71,27 +81,52 @@ return {
           bg = "",
         },
         duplicate = {
-          fg = colors.fg,
+          fg = {
+            attribute = "fg",
+            highlight = "Normal",
+          },
           bg = "",
         },
         duplicate_visible = {
-          fg = colors.fg,
+          fg = {
+            attribute = "fg",
+            highlight = "Normal",
+          },
           bg = "",
         },
         separator = {
-          fg = colors.bg,
+          fg = {
+            attribute = "fg",
+            highlight = "Normal",
+          },
           bg = "",
         },
         separator_selected = {
-          fg = colors.bg,
+          fg = {
+            attribute = "fg",
+            highlight = "Normal",
+          },
           bg = "",
         },
         separator_visible = {
-          fg = colors.bg,
+          fg = {
+            attribute = "fg",
+            highlight = "Normal",
+          },
           bg = "",
         },
         offset_separator = {
-          fg = colors.bg,
+          fg = {
+            attribute = "fg",
+            highlight = "Normal",
+          },
+          bg = "",
+        },
+        trunc_marker = {
+          fg = {
+            attribute = "fg",
+            highlight = "Normal",
+          },
           bg = "",
         },
       },

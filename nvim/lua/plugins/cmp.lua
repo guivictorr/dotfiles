@@ -5,12 +5,8 @@ return {
       local cmp = require("cmp")
 
       opts.window = {
-        completion = cmp.config.window.bordered({
-          winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None",
-        }),
-        documentation = cmp.config.window.bordered({
-          winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:Visual,Search:None",
-        }),
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
       }
 
       opts.formatting = vim.tbl_extend("force", opts.formatting, {

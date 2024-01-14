@@ -53,7 +53,7 @@ return {
               "diagnostics",
               always_visible = true,
               sections = { "error", "hint", "warn" },
-              symbols = { error = " ", hint = " ", warn = " " },
+              symbols = { error = " ", hint = " ", warn = " " },
               padding = { right = 2 },
             },
           },
