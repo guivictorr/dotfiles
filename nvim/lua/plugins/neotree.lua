@@ -1,8 +1,19 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
   keys = {
-    { "<leader>e", ":Neotree toggle float<CR>", silent = true, desc = "Float File Explorer" },
     { "<leader>fe", ":Neotree toggle left<CR>", silent = true, desc = "Left File Explorer" },
+    {
+      "<leader>e",
+      function()
+        require("neo-tree.command").execute({
+          toggle = true,
+          dir = vim.loop.cwd(),
+          position = "float",
+          reveal_force_cwd = true,
+        })
+      end,
+      desc = "Explorer NeoTree (cwd)",
+    },
   },
   opts = {
     popup_border_style = "rounded",
