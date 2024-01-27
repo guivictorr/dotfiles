@@ -1,3 +1,8 @@
+local customColor = {
+  attribute = "customColor",
+  highlight = "Normal",
+}
+
 return {
   {
     "akinsho/bufferline.nvim",
@@ -25,109 +30,254 @@ return {
 
       highlights = {
         fill = {
-          bg = "",
+          bg = customColor,
         },
         background = {
-          bg = "",
+          bg = customColor,
         },
         tab = {
-          bg = "",
+          bg = customColor,
         },
-        tab_close = {
-          bg = "",
+        tab_selected = {
+          fg = customColor,
+          bg = customColor,
         },
         tab_separator = {
-          fg = {
-            attribute = "fg",
-            highlight = "Normal",
-          },
-          bg = "",
+          fg = customColor,
+          bg = customColor,
         },
         tab_separator_selected = {
-          fg = {
-            attribute = "fg",
-            highlight = "Normal",
-          },
-          bg = "",
-          sp = {
-            attribute = "sp",
-            highlight = "Normal",
-          },
+          fg = customColor,
+          bg = customColor,
+          sp = customColor,
+          underline = customColor,
+        },
+        tab_close = {
+          fg = customColor,
+          bg = customColor,
         },
         close_button = {
-          bg = "",
-          fg = {
-            attribute = "fg",
-            highlight = "Normal",
-          },
+          fg = customColor,
+          bg = customColor,
         },
         close_button_visible = {
-          bg = "",
-          fg = {
-            attribute = "fg",
-            highlight = "Normal",
-          },
+          fg = customColor,
+          bg = customColor,
         },
         close_button_selected = {
-          fg = { attribute = "fg", highlight = "StatusLineNonText" },
+          fg = customColor,
+          bg = customColor,
         },
         buffer_visible = {
-          bg = "",
+          bg = customColor,
+        },
+        buffer_selected = {
+          fg = customColor,
+          bg = customColor,
+          bold = true,
+          italic = true,
+        },
+        numbers = {
+          fg = customColor,
+          bg = customColor,
+        },
+        numbers_visible = {
+          fg = customColor,
+          bg = customColor,
+        },
+        numbers_selected = {
+          fg = customColor,
+          bg = customColor,
+          bold = true,
+          italic = true,
+        },
+        diagnostic = {
+          bg = customColor,
+        },
+        diagnostic_visible = {
+          bg = customColor,
+        },
+        diagnostic_selected = {
+          bg = customColor,
+          bold = true,
+          italic = true,
+        },
+        hint = {
+          sp = customColor,
+          bg = customColor,
+        },
+        hint_visible = {
+          bg = customColor,
+        },
+        hint_selected = {
+          bg = customColor,
+          sp = customColor,
+          bold = true,
+          italic = true,
+        },
+        hint_diagnostic = {
+          sp = customColor,
+          bg = customColor,
+        },
+        hint_diagnostic_visible = {
+          bg = customColor,
+        },
+        hint_diagnostic_selected = {
+          bg = customColor,
+          sp = customColor,
+          bold = true,
+          italic = true,
+        },
+        info = {
+          sp = customColor,
+          bg = customColor,
+        },
+        info_visible = {
+          bg = customColor,
+        },
+        info_selected = {
+          bg = customColor,
+          sp = customColor,
+          bold = true,
+          italic = true,
+        },
+        info_diagnostic = {
+          sp = customColor,
+          bg = customColor,
+        },
+        info_diagnostic_visible = {
+          bg = customColor,
+        },
+        info_diagnostic_selected = {
+          bg = customColor,
+          sp = customColor,
+          bold = true,
+          italic = true,
+        },
+        warning = {
+          sp = customColor,
+          bg = customColor,
+        },
+        warning_visible = {
+          bg = customColor,
+        },
+        warning_selected = {
+          bg = customColor,
+          sp = customColor,
+          bold = true,
+          italic = true,
+        },
+        warning_diagnostic = {
+          sp = customColor,
+          bg = customColor,
+        },
+        warning_diagnostic_visible = {
+          bg = customColor,
+        },
+        warning_diagnostic_selected = {
+          bg = customColor,
+          sp = customColor,
+          bold = true,
+          italic = true,
+        },
+        error = {
+          bg = customColor,
+          sp = customColor,
+        },
+        error_visible = {
+          bg = customColor,
+        },
+        error_selected = {
+          bg = customColor,
+          sp = customColor,
+          bold = true,
+          italic = true,
+        },
+        error_diagnostic = {
+          bg = customColor,
+          sp = customColor,
+        },
+        error_diagnostic_visible = {
+          bg = customColor,
+        },
+        error_diagnostic_selected = {
+          bg = customColor,
+          sp = customColor,
+          bold = true,
+          italic = true,
         },
         modified = {
-          bg = "",
+          fg = customColor,
+          bg = customColor,
         },
         modified_visible = {
-          bg = "",
+          fg = customColor,
+          bg = customColor,
         },
-        duplicate = {
-          fg = {
-            attribute = "fg",
-            highlight = "Normal",
-          },
-          bg = "",
+        modified_selected = {
+          fg = customColor,
+          bg = customColor,
+        },
+        duplicate_selected = {
+          fg = customColor,
+          bg = customColor,
+          italic = true,
         },
         duplicate_visible = {
-          fg = {
-            attribute = "fg",
-            highlight = "Normal",
-          },
-          bg = "",
+          fg = customColor,
+          bg = customColor,
+          italic = true,
         },
-        separator = {
-          fg = {
-            attribute = "fg",
-            highlight = "Normal",
-          },
-          bg = "",
+        duplicate = {
+          fg = customColor,
+          bg = customColor,
+          italic = true,
         },
         separator_selected = {
-          fg = {
-            attribute = "fg",
-            highlight = "Normal",
-          },
-          bg = "",
+          fg = customColor,
+          bg = customColor,
         },
         separator_visible = {
-          fg = {
-            attribute = "fg",
-            highlight = "Normal",
-          },
-          bg = "",
+          fg = customColor,
+          bg = customColor,
+        },
+        separator = {
+          fg = customColor,
+          bg = customColor,
+        },
+        indicator_visible = {
+          fg = customColor,
+          bg = customColor,
+        },
+        indicator_selected = {
+          fg = customColor,
+          bg = customColor,
+        },
+        pick_selected = {
+          fg = customColor,
+          bg = customColor,
+          bold = true,
+          italic = true,
+        },
+        pick_visible = {
+          fg = customColor,
+          bg = customColor,
+          bold = true,
+          italic = true,
+        },
+        pick = {
+          fg = customColor,
+          bg = customColor,
+          bold = true,
+          italic = true,
         },
         offset_separator = {
-          fg = {
-            attribute = "fg",
-            highlight = "Normal",
-          },
-          bg = "",
+          fg = customColor,
+          bg = customColor,
         },
         trunc_marker = {
-          fg = {
-            attribute = "fg",
-            highlight = "Normal",
-          },
-          bg = "",
+          fg = customColor,
+          bg = customColor,
         },
       },
     },
