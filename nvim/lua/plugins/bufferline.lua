@@ -50,7 +50,6 @@ return {
           fg = customColor,
           bg = customColor,
           sp = customColor,
-          underline = customColor,
         },
         tab_close = {
           fg = customColor,
