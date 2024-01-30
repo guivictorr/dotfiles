@@ -1,16 +1,20 @@
+local Util = require("lazyvim.util")
+
 return {
   "nvim-neo-tree/neo-tree.nvim",
   keys = {
-    { "<leader>fe", ":Neotree toggle left<CR>", silent = true, desc = "Left File Explorer" },
+    { "<leader>fe", "<leader>fE", false },
     {
       "<leader>e",
       function()
-        require("neo-tree.command").execute({
-          toggle = true,
-          dir = vim.loop.cwd(),
-          position = "float",
-          reveal_force_cwd = true,
-        })
+        require("neo-tree.command").execute({ toggle = true, dir = Util.root(), position = "float" })
+      end,
+      desc = "Explorer NeoTree (root dir)",
+    },
+    {
+      "<leader>E",
+      function()
+        require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd(), position = "float" })
       end,
       desc = "Explorer NeoTree (cwd)",
     },
