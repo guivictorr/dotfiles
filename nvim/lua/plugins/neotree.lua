@@ -1,4 +1,18 @@
-local Util = require("lazyvim.util")
+local function reveal_file()
+  local reveal_file = vim.fn.expand("%:p")
+  if reveal_file == "" then
+    reveal_file = vim.fn.getcwd()
+  else
+    local f = io.open(reveal_file, "r")
+    if f then
+      f.close(f)
+    else
+      reveal_file = vim.fn.getcwd()
+    end
+  end
+
+  return reveal_file
+end
 
 return {
   "nvim-neo-tree/neo-tree.nvim",
@@ -7,17 +21,17 @@ return {
     {
       "<leader>e",
       function()
-        require("neo-tree.command").execute({ toggle = true, dir = Util.root(), position = "float" })
+        require("neo-tree.command").execute({ toggle = true, position = "float", reveal_file = reveal_file() })
       end,
       desc = "Explorer NeoTree (root dir)",
     },
-    {
-      "<leader>E",
-      function()
-        require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd(), position = "float" })
-      end,
-      desc = "Explorer NeoTree (cwd)",
-    },
+    -- {
+    --   "<leader>E",
+    --   function()
+    --     require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd(), position = "float" })
+    --   end,
+    --   desc = "Explorer NeoTree (cwd)",
+    -- },
   },
   opts = {
     popup_border_style = "rounded",
