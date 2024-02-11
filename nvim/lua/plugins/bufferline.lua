@@ -3,10 +3,40 @@ local customColor = {
   highlight = "Normal",
 }
 
+-- Function to open dashboard
+local function open_dashboard()
+  vim.cmd("Dashboard")
+end
+
+-- Function to close all buffers and open dashboard
+local function close_all_buffers_and_open_dashboard()
+  local buffers = vim.fn.getbufinfo({ buflisted = 1 })
+  for _, buf in ipairs(buffers) do
+    vim.cmd("bdelete " .. buf.bufnr)
+  end
+  -- Open dashboard if there are no more open buffers
+  if #vim.fn.getbufinfo({ buflisted = 1 }) == 1 then
+    open_dashboard()
+  end
+end
+
+local function close_buffer_and_open_dashboard()
+  local current_buffer_count = #vim.fn.getbufinfo({ buflisted = 1 })
+  vim.cmd("bdelete")
+  -- Open dashboard if it's the last buffer remaining
+  if current_buffer_count == 1 then
+    open_dashboard()
+  end
+end
+
 return {
   {
     "akinsho/bufferline.nvim",
     event = "VeryLazy",
+    keys = {
+      { "<leader>bP", close_all_buffers_and_open_dashboard, desc = "Close all buffers" },
+      { "<leader>bd", close_buffer_and_open_dashboard, desc = "Close buffer" },
+    },
     opts = {
       options = {
 
