@@ -8,6 +8,11 @@ if ! command -v stow &>/dev/null; then
 	ln -s $HOME/dotfiles/.stow-global-ignore ~/.stow-global-ignore
 fi
 
+if ! command -v bpytop &>/dev/null; then
+	echo "bpytop not found, installing..."
+	brew install bpytop
+fi
+
 echo "Linking files..."
 
 stow --target=$HOME/.config config

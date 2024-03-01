@@ -27,10 +27,10 @@ export NVM_DIR="$HOME/.nvm"
 export GPG_TTY=$(tty)
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/guilhermevictor/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/guilhermevictor/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/guilhermevictor/gcloud/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/guilhermevictor/gcloud/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/guilhermevictor/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/guilhermevictor/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/guilhermevictor/gcloud/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/guilhermevictor/gcloud/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Go Binaries
 export PATH=$PATH:$(go env GOPATH)/bin
