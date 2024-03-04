@@ -13,11 +13,13 @@ plugins=(git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
+alias tasks=bpytop
+
 # ANDROID_SDK
-export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
-export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
-export JAVA_HOME=`/usr/libexec/java_home -v 11.0`
+# export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+# export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+# export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+# export JAVA_HOME=`/usr/libexec/java_home -v 11.0`
 
 # NVM Configuration
 export NVM_DIR="$HOME/.nvm"
@@ -28,7 +30,6 @@ export GPG_TTY=$(tty)
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/guilhermevictor/gcloud/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/guilhermevictor/gcloud/google-cloud-sdk/path.zsh.inc'; fi
-
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/guilhermevictor/gcloud/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/guilhermevictor/gcloud/google-cloud-sdk/completion.zsh.inc'; fi
 
