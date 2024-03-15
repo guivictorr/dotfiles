@@ -13,6 +13,11 @@ if ! command -v bpytop &>/dev/null; then
 	brew install bpytop
 fi
 
+if ! command -v lazygit &>/dev/null; then
+	echo "lazygit not found, installing..."
+	brew install lazygit
+fi
+
 echo "Linking files..."
 
 stow --target=$HOME/.config config
