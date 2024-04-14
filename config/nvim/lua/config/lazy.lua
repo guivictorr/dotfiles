@@ -31,6 +31,7 @@ require("lazy").setup({
   },
   ui = {
     border = "rounded",
+    backdrop = 100,
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
   checker = { enabled = true }, -- automatically check for plugin updates
