@@ -7,6 +7,11 @@ return {
           hidden = true,
         },
       },
+      defaults = {
+        path_display = {
+          "filename_first",
+        },
+      },
     },
   },
 }
