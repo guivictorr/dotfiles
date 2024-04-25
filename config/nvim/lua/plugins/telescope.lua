@@ -11,6 +11,9 @@ return {
         path_display = {
           "filename_first",
         },
+        layout_config = {
+          prompt_position = "top",
+        },
       },
     },
   },
