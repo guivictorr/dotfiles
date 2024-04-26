@@ -31,6 +31,7 @@ end
 
 return {
   {
+    enabled = false,
     "akinsho/bufferline.nvim",
     event = "VeryLazy",
     keys = {
