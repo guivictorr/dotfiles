@@ -17,7 +17,8 @@ end
 return {
   "nvim-neo-tree/neo-tree.nvim",
   keys = {
-    { "<leader>fe", "<leader>fE", false },
+    { "<leader>E", ":Neotree toggle left<CR>", silent = true, desc = "Left File Explorer" },
+    -- { "<leader>e", ":Neotree toggle float<CR>", silent = true, desc = "Float File Explorer" },
     {
       "<leader>e",
       function()
@@ -36,8 +37,15 @@ return {
   opts = {
     popup_border_style = "rounded",
     window = {
-      position = "right",
-      width = 36,
+      position = "float",
+      width = 35,
+    },
+    filesystem = {
+      use_libuv_file_watcher = true,
+      filtered_items = {
+        hide_dotfiles = false,
+        hide_gitignored = false,
+      },
     },
     default_component_configs = {
       indent = {
@@ -62,12 +70,6 @@ return {
           staged = "󰄴",
           conflict = "",
         },
-      },
-    },
-    filesystem = {
-      filtered_items = {
-        hide_dotfiles = false,
-        hide_gitignored = false,
       },
     },
   },
