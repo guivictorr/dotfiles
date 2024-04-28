@@ -1,9 +1,4 @@
 local actions = require("telescope.actions")
-
-local function getParentFolder(filePath)
-  return string.match(filePath, ".*/([^/]+)/[^/]+$")
-end
-
 return {
   {
     "nvim-telescope/telescope.nvim",
@@ -16,16 +11,9 @@ return {
         layout_config = {
           prompt_position = "top",
         },
-        path_display = function(_, path)
-          local tail = require("telescope.utils").path_tail(path)
-          local parentFolder = getParentFolder(path)
-
-          if tail == "page.tsx" then
-            return string.format("%s (%s)", parentFolder, parentFolder .. "/" .. tail)
-          end
-
-          return string.format("%s (%s)", tail, parentFolder .. "/" .. tail)
-        end,
+        path_display = {
+          "filename_first",
+        },
       },
 
       pickers = {
@@ -52,10 +40,10 @@ return {
         buffers = {
           mappings = {
             i = {
-              ["<leader>bd"] = actions.delete_buffer,
+              ["<c-d>"] = actions.delete_buffer,
             },
             n = {
-              ["<leader>bd"] = actions.delete_buffer,
+              ["<c-d>"] = actions.delete_buffer,
             },
           },
           previewer = false,
