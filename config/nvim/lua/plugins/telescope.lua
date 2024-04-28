@@ -5,7 +5,7 @@ return {
     opts = {
       defaults = {
         prompt_prefix = " " .. "" .. " ",
-        selection_caret = " " .. "" .. " ",
+        selection_caret = "" .. " ",
         sorting_strategy = "ascending",
         previewer = false,
         layout_config = {
