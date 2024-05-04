@@ -14,6 +14,7 @@ plugins=(git zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 alias tasks=bpytop
+alias newbranch='git_newbranch() { git switch -c users/guivictorr/us-"$1"-tsk-"$2"; }; git_newbranch'
 
 # ANDROID_SDK
 # export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
