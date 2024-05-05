@@ -7,7 +7,6 @@ return {
     opts = {
       keymaps = {
         ["<C-s>"] = "<CMD>w<CR>",
-        ["<esc>"] = "actions.close",
         ["q"] = "actions.close",
       },
       view_options = {
