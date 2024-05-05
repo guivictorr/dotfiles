@@ -3,6 +3,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
+        prismals = {},
         tsserver = {
           handlers = {
             ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
