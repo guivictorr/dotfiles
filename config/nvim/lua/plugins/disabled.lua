@@ -4,7 +4,7 @@ return {
     enabled = false,
   },
   {
-    "catppuccin/nvim",
+    "catppuccin",
     enabled = false,
   },
   {
@@ -25,6 +25,26 @@ return {
   },
   {
     "echasnovski/mini.bufremove",
+    enabled = false,
+  },
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    enabled = false,
+  },
+  {
+    "lukas-reineke/headlines.nvim",
+    enabled = false,
+  },
+  {
+    "folke/todo-comments.nvim",
+    enabled = false,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    enabled = false,
+  },
+  {
+    "roobert/tailwindcss-colorizer-cmp.nvim",
     enabled = false,
   },
 }
