@@ -28,10 +28,6 @@ return {
     enabled = false,
   },
   {
-    "JoosepAlviste/nvim-ts-context-commentstring",
-    enabled = false,
-  },
-  {
     "lukas-reineke/headlines.nvim",
     enabled = false,
   },
