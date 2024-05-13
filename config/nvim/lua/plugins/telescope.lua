@@ -10,6 +10,13 @@ return {
         previewer = false,
         layout_config = {
           prompt_position = "top",
+          width = function(_, cols, _)
+            if cols <= 95 then
+              return 80
+            end
+
+            return 60
+          end,
         },
         path_display = {
           "filename_first",
@@ -21,15 +28,16 @@ return {
           previewer = false,
           hidden = true,
           layout_config = {
-            width = 0.4,
             prompt_position = "top",
           },
+        },
+        live_grep = {
+          previewer = false,
         },
         git_files = {
           previewer = false,
           hidden = true,
           layout_config = {
-            width = 0.4,
             prompt_position = "top",
           },
         },
@@ -50,7 +58,6 @@ return {
           initial_mode = "normal",
           layout_config = {
             height = 0.4,
-            width = 0.4,
             prompt_position = "top",
           },
         },
