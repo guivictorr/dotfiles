@@ -32,7 +32,9 @@ return {
           },
         },
         live_grep = {
-          previewer = false,
+          layout_config = {
+            width = 0.8,
+          },
         },
         git_files = {
           previewer = false,
@@ -41,9 +43,12 @@ return {
             prompt_position = "top",
           },
         },
-        lsp_references = {
+        lsp_definitions = {
           show_line = false,
           previewer = true,
+          layout_config = {
+            width = 0.8,
+          },
         },
         buffers = {
           mappings = {
