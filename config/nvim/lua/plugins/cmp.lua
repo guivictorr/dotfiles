@@ -4,6 +4,10 @@ return {
     dependencies = {
       { "windwp/nvim-autopairs", opts = {} },
     },
+    keys = {
+      { "<tab>", false, mode = { "i", "s" } },
+      { "<s-tab>", false, mode = { "i", "s" } },
+    },
     opts = function(_, opts)
       local cmp = require("cmp")
       local cmp_autopairs = require("nvim-autopairs.completion.cmp")

@@ -50,6 +50,13 @@ return {
             width = 0.8,
           },
         },
+        lsp_references = {
+          show_line = false,
+          previewer = true,
+          layout_config = {
+            width = 0.8,
+          },
+        },
         buffers = {
           mappings = {
             i = {
