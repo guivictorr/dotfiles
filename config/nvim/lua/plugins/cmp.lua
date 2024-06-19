@@ -13,11 +13,13 @@ return {
       local cmp_autopairs = require("nvim-autopairs.completion.cmp")
       cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
+      -- Border
       opts.window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
       }
 
+      -- Cmp menu with icons
       opts.formatting = vim.tbl_extend("force", opts.formatting, {
         fields = { "kind", "abbr", "menu" },
         format = function(_, item)
@@ -31,6 +33,7 @@ return {
         end,
       })
 
+      -- Key mappings
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior }),
         ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior }),
