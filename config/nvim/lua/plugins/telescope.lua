@@ -2,6 +2,9 @@ local actions = require("telescope.actions")
 return {
   {
     "nvim-telescope/telescope.nvim",
+    keys = {
+      { "<leader>uC", false },
+    },
     opts = {
       defaults = {
         prompt_prefix = " " .. "" .. " ",
