@@ -10,13 +10,6 @@ return {
         previewer = false,
         layout_config = {
           prompt_position = "top",
-          width = function(_, cols, _)
-            if cols <= 95 then
-              return 80
-            end
-
-            return 60
-          end,
         },
         path_display = {
           "filename_first",
@@ -29,11 +22,7 @@ return {
           hidden = true,
           layout_config = {
             prompt_position = "top",
-          },
-        },
-        live_grep = {
-          layout_config = {
-            width = 0.8,
+            width = 60,
           },
         },
         git_files = {
@@ -41,20 +30,7 @@ return {
           hidden = true,
           layout_config = {
             prompt_position = "top",
-          },
-        },
-        lsp_definitions = {
-          show_line = false,
-          previewer = true,
-          layout_config = {
-            width = 0.8,
-          },
-        },
-        lsp_references = {
-          show_line = false,
-          previewer = true,
-          layout_config = {
-            width = 0.8,
+            width = 60,
           },
         },
         buffers = {
@@ -70,6 +46,7 @@ return {
           initial_mode = "normal",
           layout_config = {
             height = 0.4,
+            width = 60,
             prompt_position = "top",
           },
         },
