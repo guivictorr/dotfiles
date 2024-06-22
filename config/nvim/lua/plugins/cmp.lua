@@ -1,17 +1,12 @@
 return {
   {
     "hrsh7th/nvim-cmp",
-    dependencies = {
-      { "windwp/nvim-autopairs", opts = {} },
-    },
     keys = {
       { "<tab>", false, mode = { "i", "s" } },
       { "<s-tab>", false, mode = { "i", "s" } },
     },
     opts = function(_, opts)
       local cmp = require("cmp")
-      local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-      cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
       -- Border
       opts.window = {

@@ -1,3 +1,10 @@
+local icons = {
+  clock = " ",
+  vim = "",
+  git = { added = " ", modified = " ", removed = " ", branch = "" },
+  diagnostics = { error = " ", hint = " ", warn = " " },
+}
+
 return {
   {
     "nvim-lualine/lualine.nvim",
@@ -8,42 +15,32 @@ return {
           always_divide_middle = true,
           component_separators = {},
           section_separators = {},
+          disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
         },
         sections = {
           lualine_a = {
             {
               "mode",
               icons_enabled = true,
-              icon = "",
+              icon = icons.vim,
               padding = { left = 2, right = 2 },
             },
           },
           lualine_b = {
+            { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
             {
-              "filetype",
-              icon_only = true,
-              padding = { left = 2, right = 1 },
-            },
-            {
-              "filename",
-              file_status = false,
-              new_file_status = false,
-              padding = { right = 2 },
-              symbols = {
-                modified = "[+]", -- Text to show when the file is modified.
-                readonly = "[-]", -- Text to show when the file is non-modifiable or readonly.
-              },
+              LazyVim.lualine.pretty_path(),
             },
           },
           lualine_c = {
             {
               "branch",
-              icon = { "" },
+              icon = icons.git.branch,
               padding = { right = 1, left = 2 },
             },
             {
               "diff",
-              symbols = { added = " ", modified = " ", removed = " " },
+              symbols = icons.git,
             },
           },
           lualine_x = {
@@ -51,31 +48,21 @@ return {
               "diagnostics",
               always_visible = true,
               sections = { "error", "hint", "warn" },
-              symbols = { error = " ", hint = " ", warn = " " },
+              symbols = icons.diagnostics,
               padding = { right = 2 },
             },
           },
           lualine_y = {
-            {
-              "hostname",
-              icon = { " ", align = "center" },
-              padding = { right = 2, left = 2 },
-            },
+            { "progress", separator = " ", padding = { left = 1, right = 0 } },
+            { "location", padding = { left = 0, right = 1 } },
           },
           lualine_z = {
-            {
-              "location",
-              padding = { left = 1, right = 1 },
-            },
-            {
-              "progress",
-              icon = "",
-              padding = { right = 2 },
-            },
+            function()
+              return icons.clock .. os.date("%R")
+            end,
           },
         },
-        tabline = {},
-        extensions = { "neo-tree", "lazy" },
+        extensions = { "lazy" },
       }
     end,
   },

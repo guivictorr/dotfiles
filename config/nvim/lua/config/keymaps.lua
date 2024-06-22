@@ -14,9 +14,6 @@ keymap.set("x", "p", "P")
 keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
 
--- Select all
-keymap.set("n", "<C-a>", "gg<S-v>G")
-
 -- Split
 keymap.set("n", "ss", ":split<Return><C-w>w")
 keymap.set("n", "sv", ":vsplit<Return><C-w>w")
