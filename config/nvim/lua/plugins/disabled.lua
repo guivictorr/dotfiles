@@ -51,4 +51,8 @@ return {
     "roobert/tailwindcss-colorizer-cmp.nvim",
     enabled = false,
   },
+  {
+    "nvimdev/dashboard-nvim",
+    enabled = false,
+  },
 }

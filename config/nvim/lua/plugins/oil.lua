@@ -15,10 +15,11 @@ return {
         show_hidden = false,
       },
       float = {
-        max_width = 100,
+        max_width = 60,
+        max_height = 20,
       },
     },
     -- Optional dependencies
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    dependencies = { "nvim-tree/nvim-web-devicons", "echasnovski/mini.icons" },
   },
 }

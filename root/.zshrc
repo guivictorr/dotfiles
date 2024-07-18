@@ -11,28 +11,15 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(git zsh-syntax-highlighting)
 
-source $ZSH/oh-my-zsh.sh
-
-alias tasks=bpytop
-alias newbranch='git_newbranch() { git switch -c users/guivictorr/us-"$1"-tsk-"$2"; }; git_newbranch'
-
-# ANDROID_SDK
-# export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
-# export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
-# export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
-# export JAVA_HOME=`/usr/libexec/java_home -v 11.0`
-
+export FZF_DEFAULT_OPTS='--height 60% --tmux center,40%,60% --layout reverse --no-scrollbar --color=pointer:#C18F40,prompt:#C18F40'
+# Set up fzf key bindings and fuzzy completion
 # NVM Configuration
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
 export GPG_TTY=$(tty)
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/guilhermevictor/gcloud/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/guilhermevictor/gcloud/google-cloud-sdk/path.zsh.inc'; fi
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/guilhermevictor/gcloud/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/guilhermevictor/gcloud/google-cloud-sdk/completion.zsh.inc'; fi
-
 # Go Binaries
 export PATH=$PATH:$(go env GOPATH)/bin
+
+source <(fzf --zsh)
+source $ZSH/oh-my-zsh.sh
