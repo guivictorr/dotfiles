@@ -4,6 +4,7 @@ return {
     "nvim-telescope/telescope.nvim",
     keys = {
       { "<leader>uC", false },
+      { "<leader>fo", "<cmd>Obsidian<cr>", desc = "Second Brain" },
     },
     opts = {
       defaults = {

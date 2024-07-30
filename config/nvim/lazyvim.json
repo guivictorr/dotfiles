@@ -7,10 +7,11 @@
     "lazyvim.plugins.extras.lang.prisma",
     "lazyvim.plugins.extras.lang.tailwind",
     "lazyvim.plugins.extras.lang.typescript",
-    "lazyvim.plugins.extras.linting.eslint"
+    "lazyvim.plugins.extras.linting.eslint",
+    "lazyvim.plugins.extras.ui.mini-starter"
   ],
   "news": {
-    "NEWS.md": "6296"
+    "NEWS.md": "6520"
   },
   "version": 6
 }
