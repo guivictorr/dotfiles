@@ -8,6 +8,7 @@ vim.diagnostic.config({
 -- Remove transparency
 vim.opt.pumblend = 0
 
+-- Change color of floating borders
 vim.api.nvim_set_hl(0, "FloatBorder", { link = "TelescopeBorder" })
 vim.api.nvim_set_hl(0, "FloatTitle", { link = "TelescopeTitle" })
 vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "TelescopeBorder" })
@@ -19,4 +20,9 @@ vim.api.nvim_create_user_command("Obsidian", function()
     cwd = "/Users/guilhermevictor/Library/Mobile Documents/iCloud~md~obsidian/Documents/Second Brain/",
     find_command = { "rg", "--files", "--iglob", "!.obsidian", "--iglob", "!.trash" },
   })
+end, {})
+
+-- Open bpytop
+vim.api.nvim_create_user_command("Bpytop", function()
+  LazyVim.terminal("bpytop")
 end, {})
