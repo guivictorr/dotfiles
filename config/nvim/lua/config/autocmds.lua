@@ -5,9 +5,12 @@ vim.diagnostic.config({
   float = { border = "rounded" },
 })
 
-vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
-vim.api.nvim_set_hl(0, "FloatTitle", { link = "Normal" })
-vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "Normal" })
+-- Remove transparency
+vim.opt.pumblend = 0
+
+vim.api.nvim_set_hl(0, "FloatBorder", { link = "TelescopeBorder" })
+vim.api.nvim_set_hl(0, "FloatTitle", { link = "TelescopeTitle" })
+vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "TelescopeBorder" })
 vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
 
 -- Open Obsidian Folder

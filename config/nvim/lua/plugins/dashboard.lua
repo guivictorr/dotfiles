@@ -3,7 +3,7 @@ return {
   lazy = false, -- As https://github.com/nvimdev/dashboard-nvim/pull/450, dashboard-nvim shouldn't be lazy-loaded to properly handle stdin.
   opts = {
     config = {
-      header = vim.split(string.rep("\n", 12), "\n"),
+      header = vim.split(string.rep("\n", 10), "\n"),
       center = {
         {
           action = "lua LazyVim.pick()()",
