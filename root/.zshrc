@@ -23,3 +23,5 @@ export PATH=$PATH:$(go env GOPATH)/bin
 
 source <(fzf --zsh)
 source $ZSH/oh-my-zsh.sh
+
+alias vim="nvim"
