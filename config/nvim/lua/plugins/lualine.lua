@@ -12,7 +12,6 @@ return {
     opts = function()
       return {
         options = {
-          always_divide_middle = true,
           component_separators = {},
           section_separators = {},
           disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
