@@ -18,7 +18,7 @@ vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
 vim.api.nvim_create_user_command("Obsidian", function()
   require("telescope.builtin").find_files({
     cwd = "/Users/guilhermevictor/Library/Mobile Documents/iCloud~md~obsidian/Documents/Second Brain/",
-    find_command = { "rg", "--files", "--iglob", "!.obsidian", "--iglob", "!.trash" },
+    find_command = { "rg", "--files", "--iglob", "*.md" },
   })
 end, {})
 
@@ -27,6 +27,7 @@ vim.api.nvim_create_user_command("SearchFolders", function()
   require("telescope.builtin").find_files({
     cwd = "~",
     -- stylua: ignore
+    -- I'm sure there's a way to do this smaller
     find_command = { "fd", "--type", "dir", "-E", ".git", "--search-path", "personal", "--search-path", "pecege", "--search-path", "dotfiles"},
   })
 end, {})
