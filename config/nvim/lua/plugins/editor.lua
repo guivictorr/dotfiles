@@ -1,10 +1,9 @@
-local actions = require("telescope.actions")
 return {
   {
     "nvim-telescope/telescope.nvim",
     keys = {
-      { "<leader>uC", false },
       { "<leader>fo", "<cmd>Obsidian<cr>", desc = "Second Brain" },
+      { "<leader>sf", "<cmd>SearchFolders<cr>", desc = "Search Folders" },
     },
     opts = {
       defaults = {
@@ -38,14 +37,6 @@ return {
           },
         },
         buffers = {
-          mappings = {
-            i = {
-              ["<c-d>"] = actions.delete_buffer,
-            },
-            n = {
-              ["<c-d>"] = actions.delete_buffer,
-            },
-          },
           previewer = false,
           initial_mode = "normal",
           layout_config = {
@@ -56,5 +47,28 @@ return {
         },
       },
     },
+  },
+  {
+    "stevearc/oil.nvim",
+    lazy = false,
+    keys = {
+      { "<leader>e", ":Oil --float<CR>", desc = "Oil" },
+    },
+    opts = {
+      keymaps = {
+        ["<C-s>"] = "<CMD>w<CR>",
+        ["<C-l>"] = "actions.select_vsplit",
+        ["q"] = "actions.close",
+      },
+      view_options = {
+        show_hidden = false,
+      },
+      float = {
+        max_width = 60,
+        max_height = 20,
+      },
+    },
+    -- Optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons", "echasnovski/mini.icons" },
   },
 }

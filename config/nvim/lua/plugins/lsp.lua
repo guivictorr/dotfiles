@@ -1,5 +1,16 @@
 return {
   {
+    "neovim/nvim-lspconfig",
+    opts = {
+      inlay_hints = { enabled = false },
+      diagnostics = {
+        float = {
+          border = "rounded",
+        },
+      },
+    },
+  },
+  {
     "hrsh7th/nvim-cmp",
     dependencies = {
       { "windwp/nvim-autopairs", opts = {} },

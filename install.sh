@@ -26,12 +26,6 @@ if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
-# install fzf if isn't installed
-if ! command -v fzf &>/dev/null; then
-  echo "fzf not found, installing..."
-  brew install fzf
-fi
-
 echo "Linking files..."
 
 stow --target=$HOME/.config config

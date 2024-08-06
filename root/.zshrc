@@ -11,7 +11,6 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(git zsh-syntax-highlighting)
 
-export FZF_DEFAULT_OPTS='--height 60% --tmux center,40%,60% --layout reverse --no-scrollbar --color=pointer:#C18F40,prompt:#C18F40'
 # Set up fzf key bindings and fuzzy completion
 # NVM Configuration
 export NVM_DIR="$HOME/.nvm"

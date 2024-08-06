@@ -22,6 +22,15 @@ vim.api.nvim_create_user_command("Obsidian", function()
   })
 end, {})
 
+-- Search specific folders from root
+vim.api.nvim_create_user_command("SearchFolders", function()
+  require("telescope.builtin").find_files({
+    cwd = "~",
+    -- stylua: ignore
+    find_command = { "fd", "--type", "dir", "-E", ".git", "--search-path", "personal", "--search-path", "pecege", "--search-path", "dotfiles"},
+  })
+end, {})
+
 -- Open bpytop
 vim.api.nvim_create_user_command("Bpytop", function()
   LazyVim.terminal("bpytop")
