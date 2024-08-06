@@ -28,7 +28,7 @@ vim.api.nvim_create_user_command("SearchFolders", function()
     cwd = "~",
     -- stylua: ignore
     -- I'm sure there's a way to do this smaller
-    find_command = { "fd", "--type", "dir", "-E", ".git", "--search-path", "personal", "--search-path", "pecege", "--search-path", "dotfiles"},
+    find_command = { "fd", "--type", "dir", "-E", ".git", "--search-path", "personal", "--search-path", "work", "--search-path", "dotfiles"},
   })
 end, {})
 
