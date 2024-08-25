@@ -21,7 +21,7 @@ vim.api.nvim_create_user_command("Cd", function()
       ["enter"] = {
         desc = "change-directory",
         fn = function(sel)
-          vim.cmd("cd " .. sel[1])
+          vim.cmd("cd ~/" .. sel[1])
           vim.cmd("Dashboard")
         end,
       },

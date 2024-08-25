@@ -5,8 +5,10 @@ return {
       { "<leader>cd", "<cmd>Cd<cr>", desc = "Change Directory" },
     },
     opts = {
+      preview_opts = "hidden",
       winopts = {
         backdrop = 100,
+        width = 0.40,
       },
     },
   },
