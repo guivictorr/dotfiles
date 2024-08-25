@@ -10,23 +10,22 @@ vim.opt.pumblend = 0
 
 -- Change color of floating borders
 vim.api.nvim_set_hl(0, "FloatBorder", { link = "TelescopeBorder" })
+vim.api.nvim_set_hl(0, "FzfLuaBorder", { link = "TelescopeBorder" })
 vim.api.nvim_set_hl(0, "FloatTitle", { link = "TelescopeTitle" })
 vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "TelescopeBorder" })
 vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
 
--- Open Obsidian Folder
-vim.api.nvim_create_user_command("Obsidian", function()
-  require("telescope.builtin").find_files({
-    cwd = "/Users/guilhermevictor/Library/Mobile Documents/iCloud~md~obsidian/Documents/Second Brain/",
-    search_file = "*.md",
-  })
-end, {})
-
--- Search specific folders from root
-vim.api.nvim_create_user_command("SearchFolders", function()
-  require("telescope.builtin").find_files({
-    cwd = "~",
-    search_dirs = { "personal", "work", "dotfiles" },
+vim.api.nvim_create_user_command("Cd", function()
+  require("fzf-lua").fzf_exec('fd --type d --max-depth 1 . ~/personal ~/work ~/dotfiles | sed "s|$HOME/||"', {
+    actions = {
+      ["enter"] = {
+        desc = "change-directory",
+        fn = function(sel)
+          vim.cmd("cd " .. sel[1])
+          vim.cmd("Dashboard")
+        end,
+      },
+    },
   })
 end, {})
 

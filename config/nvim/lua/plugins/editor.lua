@@ -1,50 +1,12 @@
 return {
   {
-    "nvim-telescope/telescope.nvim",
+    "ibhagwan/fzf-lua",
     keys = {
-      { "<leader>fo", "<cmd>Obsidian<cr>", desc = "Second Brain" },
-      { "<leader>sf", "<cmd>SearchFolders<cr>", desc = "Search Folders" },
+      { "<leader>cd", "<cmd>Cd<cr>", desc = "Change Directory" },
     },
     opts = {
-      defaults = {
-        prompt_prefix = " " .. "" .. " ",
-        selection_caret = "" .. " ",
-        sorting_strategy = "ascending",
-        previewer = false,
-        layout_config = {
-          prompt_position = "top",
-        },
-        path_display = {
-          "filename_first",
-        },
-      },
-
-      pickers = {
-        find_files = {
-          previewer = false,
-          hidden = true,
-          layout_config = {
-            prompt_position = "top",
-            width = 60,
-          },
-        },
-        git_files = {
-          previewer = false,
-          hidden = true,
-          layout_config = {
-            prompt_position = "top",
-            width = 60,
-          },
-        },
-        buffers = {
-          previewer = false,
-          initial_mode = "normal",
-          layout_config = {
-            height = 0.4,
-            width = 60,
-            prompt_position = "top",
-          },
-        },
+      winopts = {
+        backdrop = 100,
       },
     },
   },

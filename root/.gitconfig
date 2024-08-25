@@ -17,3 +17,5 @@
 	gpgSign = true
 [push]
 	autoSetupRemote = true
+[http]
+	postBuffer = 524288000
