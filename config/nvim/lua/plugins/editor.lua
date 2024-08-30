@@ -6,6 +6,12 @@ return {
     },
     opts = {
       preview_opts = "hidden",
+      files = {
+        no_header_i = true,
+      },
+      grep = {
+        no_header_i = true,
+      },
       winopts = {
         backdrop = 100,
         width = 0.40,
