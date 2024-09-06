@@ -6,15 +6,19 @@ return {
     },
     opts = {
       preview_opts = "hidden",
-      files = {
+      defaults = {
+        formatter = "path.filename_first",
+        no_header = true,
         no_header_i = true,
       },
       grep = {
-        no_header_i = true,
+        winopts = {
+          width = 100,
+        },
       },
       winopts = {
         backdrop = 100,
-        width = 0.40,
+        width = 60,
       },
     },
   },
