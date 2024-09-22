@@ -13,8 +13,11 @@ return {
     --   "BufNewFile path/to/my-vault/*.md",
     -- },
     keys = {
-      { "<leader>of", "<cmd>ObsidianSearch<cr>", desc = "Search in Second Brain" },
+      { "<leader>o/", "<cmd>ObsidianSearch<cr>", desc = "Grep in Second Brain" },
       { "<leader>on", "<cmd>ObsidianNewFromTemplate<cr>", desc = "New note" },
+      { "<leader>of", "<cmd>ObsidianQuickSwitch<cr>", desc = "Search Notes" },
+      { "<leader>ot", "<cmd>ObsidianTags<cr>", desc = "Search Tags" },
+      { "<leader>ogd", "<cmd>ObsidianFollowLink<cr>", desc = "Follow Link" },
     },
     dependencies = {
       "nvim-lua/plenary.nvim",
