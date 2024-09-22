@@ -24,10 +24,9 @@ cursor_shape block
 
 # Theme
 include theme.conf
-include nerd-font-symbols.conf
 
 # BEGIN_KITTY_FONTS
-font_family      family="JetBrains Mono"
+font_family      family="GeistMono Nerd Font Mono"
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
