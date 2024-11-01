@@ -26,3 +26,10 @@ export PATH=$PATH:$(go env GOPATH)/bin
 source $ZSH/oh-my-zsh.sh
 
 alias vim="nvim"
+
+# bun completions
+[ -s "/Users/guilhermevictor/.bun/_bun" ] && source "/Users/guilhermevictor/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

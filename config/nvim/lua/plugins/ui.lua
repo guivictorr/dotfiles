@@ -61,6 +61,14 @@ return {
             key_hl = "AerialGuide",
           },
           {
+            action = "lua require('persistence').load({ last = true })",
+            desc = " Restore Session",
+            icon = " ",
+            key = "s",
+            icon_hl = "AccessQual",
+            key_hl = "AerialGuide",
+          },
+          {
             action = function()
               vim.api.nvim_input("<cmd>qa<cr>")
             end,
