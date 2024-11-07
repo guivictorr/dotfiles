@@ -14,10 +14,11 @@ return {
     -- },
     keys = {
       { "<leader>o/", "<cmd>ObsidianSearch<cr>", desc = "Grep in Second Brain" },
-      { "<leader>on", "<cmd>ObsidianNewFromTemplate<cr>", desc = "New note" },
+      { "<leader>onn", "<cmd>ObsidianNewFromTemplate<cr>", desc = "New note" },
       { "<leader>of", "<cmd>ObsidianQuickSwitch<cr>", desc = "Search Notes" },
       { "<leader>ot", "<cmd>ObsidianTags<cr>", desc = "Search Tags" },
       { "<leader>ogd", "<cmd>ObsidianFollowLink<cr>", desc = "Follow Link" },
+      { "<leader>ond", "<cmd>ObsidianToday<cr>", desc = "New daily note" },
     },
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -28,6 +29,16 @@ return {
           name = "Second Brain",
           path = "/Users/guilhermevictor/Library/Mobile Documents/iCloud~md~obsidian/Documents/Second Brain/",
         },
+      },
+      daily_notes = {
+        -- Optional, if you keep daily notes in a separate directory.
+        folder = "Daily",
+        -- Optional, if you want to change the date format for the ID of daily notes.
+        date_format = "%d-%m-%Y",
+        -- Optional, default tags to add to each new daily note created.
+        default_tags = {},
+        -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
+        template = "daily.md",
       },
       -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
       completion = {

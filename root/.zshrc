@@ -12,7 +12,7 @@ ZSH_THEME="spaceship"
 plugins=(git zsh-syntax-highlighting)
 
 export FZF_DEFAULT_OPTS='--height 60% --tmux center,40%,60% --layout reverse --no-scrollbar --color=pointer:#C18F40,prompt:#C18F40'
-alias sd="cd ~ && cd \$(find personal work dotfiles -maxdepth 1 -mindepth 1 -type d 2>/dev/null | fzf)"
+alias sd="cd ~ && cd \$(find personal work dotfiles ~/SecondBrain -maxdepth 1 -mindepth 1 -type d 2>/dev/null | fzf)"
 
 # Set up fzf key bindings and fuzzy completion
 # NVM Configuration
