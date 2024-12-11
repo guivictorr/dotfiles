@@ -12,7 +12,7 @@ ZSH_THEME="spaceship"
 plugins=(git zsh-syntax-highlighting)
 
 export FZF_DEFAULT_OPTS='--height 60% --tmux center,40%,60% --layout reverse --no-scrollbar --color=pointer:#C18F40,prompt:#C18F40'
-alias sd="cd ~ && cd \$(find personal work dotfiles ~/SecondBrain -maxdepth 1 -mindepth 1 -type d 2>/dev/null | fzf)"
+alias sd="cd ~ && cd \$(find -L SecondBrain personal work dotfiles -maxdepth 1 -mindepth 1 -type d 2>/dev/null | fzf)"
 
 # Set up fzf key bindings and fuzzy completion
 # NVM Configuration
@@ -33,3 +33,7 @@ alias vim="nvim"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools

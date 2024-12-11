@@ -32,54 +32,52 @@ return {
     },
   },
   {
-    "rcarriga/nvim-notify",
-    opts = {
-      render = "wrapped-compact",
-    },
-  },
-  {
-    "nvimdev/dashboard-nvim",
+    "folke/snacks.nvim",
     lazy = false, -- As https://github.com/nvimdev/dashboard-nvim/pull/450, dashboard-nvim shouldn't be lazy-loaded to properly handle stdin.
     opts = {
-      config = {
-        header = vim.split(string.rep("\n", 9), "\n"),
-        center = {
-          {
-            action = "lua LazyVim.pick()()",
-            desc = " Find File",
-            icon = " ",
-            key = "f",
-            icon_hl = "AccessQual",
-            key_hl = "AerialGuide",
-          },
-          {
-            action = "lua LazyVim.pick.config_files()()",
-            desc = " Config",
-            icon = " ",
-            key = "c",
-            icon_hl = "AccessQual",
-            key_hl = "AerialGuide",
-          },
-          {
-            action = "lua require('persistence').load({ last = true })",
-            desc = " Restore Session",
-            icon = " ",
-            key = "s",
-            icon_hl = "AccessQual",
-            key_hl = "AerialGuide",
-          },
-          {
-            action = function()
-              vim.api.nvim_input("<cmd>qa<cr>")
-            end,
-            desc = " Quit",
-            icon = "󰩈 ",
-            icon_hl = "AccessQual",
-            key = "q",
-            key_hl = "AerialGuide",
+      win = {
+        backdrop = false,
+      },
+      dashboard = {
+        sections = {
+          { section = "keys", align = "center", gap = 1 },
+        },
+        preset = {
+          keys = {
+            {
+              action = ":lua LazyVim.pick()()",
+              key = "f",
+              text = {
+                { "  Find File", hl = "AccessQual", width = 50 },
+                { "[f]", hl = "AerialGuide" },
+              },
+            },
+            {
+              action = ":lua LazyVim.pick.config_files()()",
+              key = "c",
+              text = {
+                { "  Config", hl = "AccessQual", width = 50 },
+                { "[c]", hl = "AerialGuide" },
+              },
+            },
+            {
+              action = ":lua require('persistence').load({ last = true })",
+              key = "s",
+              text = {
+                { "  Restore Session", hl = "AccessQual", width = 50 },
+                { "[s]", hl = "AerialGuide" },
+              },
+            },
+            {
+              action = ":qa",
+              key = "q",
+              text = {
+                { "󰩈  Quit", hl = "AccessQual", width = 50 },
+                { "[q]", hl = "AerialGuide" },
+              },
+            },
           },
         },
-        footer = {},
       },
     },
   },
@@ -91,7 +89,7 @@ return {
         options = {
           component_separators = {},
           section_separators = {},
-          disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
+          disabled_filetypes = { statusline = { "dashboard", "alpha", "starter", "snacks_dashboard" } },
         },
         sections = {
           lualine_a = {

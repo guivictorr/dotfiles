@@ -23,7 +23,6 @@ require("lazy").setup({
   },
   ui = {
     border = "rounded",
-    backdrop = 100,
   },
   install = { colorscheme = { "gruvbox-material" } },
   checker = { enabled = true }, -- automatically check for plugin updates
