@@ -40,6 +40,13 @@ return {
       },
       dashboard = {
         sections = {
+          {
+            title = "Current Directory",
+            text = {
+              { vim.fn.getcwd():match("([^/]+/[^/]+)$"), align = "center" },
+            },
+            padding = 1,
+          },
           { section = "keys", align = "center", gap = 1 },
         },
         preset = {
@@ -49,7 +56,7 @@ return {
               key = "f",
               text = {
                 { "  Find File", hl = "AccessQual", width = 50 },
-                { "[f]", hl = "AerialGuide" },
+                { "[f]", hl = "SnacksDashboardDir" },
               },
             },
             {
@@ -57,7 +64,7 @@ return {
               key = "c",
               text = {
                 { "  Config", hl = "AccessQual", width = 50 },
-                { "[c]", hl = "AerialGuide" },
+                { "[c]", hl = "SnacksDashboardDir" },
               },
             },
             {
@@ -65,7 +72,7 @@ return {
               key = "s",
               text = {
                 { "  Restore Session", hl = "AccessQual", width = 50 },
-                { "[s]", hl = "AerialGuide" },
+                { "[s]", hl = "SnacksDashboardDir" },
               },
             },
             {
@@ -73,7 +80,7 @@ return {
               key = "q",
               text = {
                 { "󰩈  Quit", hl = "AccessQual", width = 50 },
-                { "[q]", hl = "AerialGuide" },
+                { "[q]", hl = "SnacksDashboardDir" },
               },
             },
           },

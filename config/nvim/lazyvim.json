@@ -1,6 +1,5 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.ai.supermaven",
     "lazyvim.plugins.extras.coding.mini-surround",
     "lazyvim.plugins.extras.editor.fzf",
     "lazyvim.plugins.extras.formatting.prettier",
