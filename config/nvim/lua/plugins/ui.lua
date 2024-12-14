@@ -4,7 +4,6 @@ local icons = {
   git = { added = " ", modified = " ", removed = " ", branch = "" },
   diagnostics = { error = " ", hint = " ", warn = " " },
 }
-
 return {
   {
     "folke/noice.nvim",

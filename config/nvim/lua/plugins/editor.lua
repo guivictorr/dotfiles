@@ -79,9 +79,9 @@ return {
   },
   {
     "ibhagwan/fzf-lua",
-    keys = {
-      { "<leader>cd", "<cmd>Cd<cr>", desc = "Change Directory" },
-    },
+    -- keys = {
+    --   { "<leader>cd", "<cmd>Cd<cr>", desc = "Change Directory" },
+    -- },
     opts = {
       preview_opts = "hidden",
       defaults = {

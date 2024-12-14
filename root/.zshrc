@@ -27,12 +27,12 @@ source $ZSH/oh-my-zsh.sh
 
 alias vim="nvim"
 
-# bun completions
-[ -s "/Users/guilhermevictor/.bun/_bun" ] && source "/Users/guilhermevictor/.bun/_bun"
-
 # bun
+[ -s "/Users/guilhermevictor/.bun/_bun" ] && source "/Users/guilhermevictor/.bun/_bun"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Android
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
