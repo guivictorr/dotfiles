@@ -5,9 +5,6 @@ vim.diagnostic.config({
   float = { border = "rounded" },
 })
 
--- Remove transparency
-vim.opt.pumblend = 0
-
 -- Change color of floating borders
 -- vim.api.nvim_set_hl(0, "FzfLuaBorder", { link = "TelescopeBorder" })
 vim.api.nvim_set_hl(0, "FloatTitle", { link = "SnacksWinBar" })
