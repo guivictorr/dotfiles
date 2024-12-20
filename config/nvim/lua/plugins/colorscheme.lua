@@ -15,8 +15,11 @@ return {
 
       -- Set the background based on macOS appearance
       if is_dark_mode() then
+        vim.g.gruvbox_material_background = "hard"
         vim.opt.background = "dark"
       else
+        vim.g.gruvbox_material_background = "medium"
+        vim.g.gruvbox_material_float_style = "dim"
         vim.opt.background = "light"
       end
     end,
