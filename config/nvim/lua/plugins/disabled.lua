@@ -1,5 +1,9 @@
 return {
   {
+    "rafamadriz/friendly-snippets",
+    enabled = false,
+  },
+  {
     "echasnovski/mini.ai",
     enabled = false,
   },
