@@ -21,5 +21,3 @@ keymap.set("n", "sv", ":vsplit<Return><C-w>w")
 -- Center cursor on scroll
 keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
-
-keymap.set("n", "<leader>y", "<CMD>Bpytop<CR>")

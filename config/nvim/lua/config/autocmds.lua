@@ -12,7 +12,16 @@ vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "FzfLuaBorder" })
 vim.api.nvim_set_hl(0, "FloatBorder", { link = "FzfLuaBorder" })
 vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
 
--- Open bpytop
-vim.api.nvim_create_user_command("Bpytop", function()
-  LazyVim.terminal("bpytop")
-end, {})
+-- Set padding to zero on VimEnter
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  callback = function()
+    vim.cmd("silent !kitty @ set-spacing padding-left=0 padding-top=0 padding-bottom=0 padding-right=0")
+  end,
+})
+
+-- Restore default padding on VimLeave
+vim.api.nvim_create_autocmd({ "VimLeave" }, {
+  callback = function()
+    vim.cmd("silent !kitty @ set-spacing padding-left=default padding-top=default")
+  end,
+})

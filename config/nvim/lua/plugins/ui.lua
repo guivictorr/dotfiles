@@ -1,8 +1,7 @@
 local icons = {
-  clock = " ",
   vim = "",
   git = { added = " ", modified = " ", removed = " ", branch = "" },
-  diagnostics = { error = " ", hint = " ", warn = " " },
+  diagnostics = { error = " ", hint = "󰌵 ", warn = " " },
 }
 return {
   {
@@ -93,8 +92,8 @@ return {
     opts = function()
       return {
         options = {
-          component_separators = {},
-          section_separators = {},
+          section_separators = { left = " ", right = " " },
+          component_separators = { left = "", right = "" },
           disabled_filetypes = { statusline = { "dashboard", "alpha", "starter", "snacks_dashboard" } },
         },
         sections = {
@@ -103,7 +102,7 @@ return {
               "mode",
               icons_enabled = true,
               icon = icons.vim,
-              padding = { left = 2, right = 2 },
+              padding = { left = 2, right = 1 },
             },
           },
           lualine_b = {
@@ -116,7 +115,7 @@ return {
             {
               "branch",
               icon = icons.git.branch,
-              padding = { right = 1, left = 2 },
+              padding = { right = 1, left = 1 },
             },
             {
               "diff",
@@ -129,7 +128,7 @@ return {
               always_visible = true,
               sections = { "error", "hint", "warn" },
               symbols = icons.diagnostics,
-              padding = { right = 2 },
+              padding = { right = 1 },
             },
           },
           lualine_y = {
@@ -138,7 +137,7 @@ return {
           },
           lualine_z = {
             function()
-              return icons.clock .. os.date("%R")
+              return os.date("%R")
             end,
           },
         },
