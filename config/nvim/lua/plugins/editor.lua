@@ -5,7 +5,7 @@ return {
       keymap = {
         ["<C-l>"] = {
           function(cmp)
-            cmp.show({ providers = { "snippets" } })
+            cmp.show({ providers = { "lsp" } })
           end,
         },
       },
@@ -57,7 +57,7 @@ return {
         ["q"] = "actions.close",
       },
       view_options = {
-        show_hidden = false,
+        show_hidden = true,
       },
       float = {
         max_width = 60,
