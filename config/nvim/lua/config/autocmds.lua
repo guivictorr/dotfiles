@@ -13,7 +13,8 @@ vim.api.nvim_set_hl(0, "FloatBorder", { link = "FzfLuaBorder" })
 vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
 
 -- Set padding to zero on VimEnter
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
+vim.api.nvim_create_autocmd("BufRead", {
+  group = vim.api.nvim_create_augroup("Kitty", { clear = true }),
   callback = function()
     vim.cmd(
       "silent !kitty @ --to unix:$(ls /tmp/mykitty* 2>/dev/null || echo '') set-spacing padding-left=0 padding-top=0 padding-bottom=0 padding-right=0"
@@ -22,7 +23,7 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
 })
 
 -- Restore default padding on VimLeave
-vim.api.nvim_create_autocmd({ "VimLeave" }, {
+vim.api.nvim_create_autocmd("VimLeave", {
   callback = function()
     vim.cmd(
       "silent !kitty @ --to unix:$(ls /tmp/mykitty* 2>/dev/null || echo '') set-spacing padding-left=default padding-top=default padding-right=default padding-bottom=default"

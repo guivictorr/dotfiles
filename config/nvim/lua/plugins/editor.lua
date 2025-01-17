@@ -1,6 +1,10 @@
 return {
   {
     "saghen/blink.cmp",
+    dependencies = {
+      "windwp/nvim-autopairs",
+      opts = {},
+    },
     opts = {
       keymap = {
         ["<C-l>"] = {
@@ -57,7 +61,7 @@ return {
         ["q"] = "actions.close",
       },
       view_options = {
-        show_hidden = true,
+        show_hidden = false,
       },
       float = {
         max_width = 60,
