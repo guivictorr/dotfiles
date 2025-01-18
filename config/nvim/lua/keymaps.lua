@@ -34,11 +34,10 @@ keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' 
 keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-
 keymap.set('n', '<leader>ll', '<CMD>Lazy<CR>', { desc = 'Open Lazy' })
-
 keymap.set('n', '<leader>ur', '<CMD>nohl<CR>', { desc = 'Clear Highlights' })
-
 keymap.set('n', 'C-s', '<CMD>w<CR>', { desc = 'Save Buffer' })
-
 keymap.set('n', '<leader>qq', '<CMD>qa<CR>', { desc = 'Quit' })
+keymap.set('n', '<C-s>', '<CMD>w<CR>', { desc = 'Save Buffer' })
+keymap.set('n', '<leader>un', '<CMD>Noice dismiss<CR>', { desc = 'Clear Notifications' })
+keymap.set('n', '<leader>sn', '<CMD>Noice telescope<CR>', { desc = 'Search Notifications' })
