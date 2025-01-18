@@ -2,7 +2,7 @@ return {
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.8',
-    keys = { '<leader>sf', '<leader>sh', '<leader>sg', '<leader>sd', '<leader>sb' },
+    event = 'VimEnter',
     dependencies = {
       'nvim-lua/plenary.nvim',
       { 'nvim-telescope/telescope-ui-select.nvim' },
@@ -37,11 +37,16 @@ return {
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Search Help' })
-      vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = 'Search Files' })
+      vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = 'Search Files (Cwd)' })
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = 'Search by Grep' })
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Search Diagnostics' })
       vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Find existing buffers' })
+      -- Function to get the root directory
 
+      -- Key mapping for searching in the root folder
+      vim.keymap.set('n', '<leader>sF', function()
+        builtin.find_files { cwd = require('utils').get_root_dir() }
+      end, { desc = 'Search files (Root Folder)' })
       -- Shortcut for searching my dotfiles
       vim.keymap.set('n', '<leader>sc', function()
         builtin.find_files { cwd = '~/dotfiles' }
@@ -70,6 +75,6 @@ return {
       },
     },
     -- Optional dependencies
-    dependencies = { { 'echasnovski/mini.icons', opts = {} } },
+    dependencies = { { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font } },
   },
 }

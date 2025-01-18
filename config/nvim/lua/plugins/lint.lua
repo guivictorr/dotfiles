@@ -36,7 +36,7 @@ return {
       -- Create autocommand which carries out the actual linting
       -- on the specified events.
       local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
-      vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave' }, {
+      vim.api.nvim_create_autocmd({ 'BufWritePost', 'BufReadPost', 'InsertLeave' }, {
         group = lint_augroup,
         callback = function()
           -- Only run the linter in buffers that you can modify in order to
