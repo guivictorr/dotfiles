@@ -41,6 +41,11 @@ return {
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = 'Search by Grep' })
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Search Diagnostics' })
       vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Find existing buffers' })
+
+      -- Shortcut for searching my dotfiles
+      vim.keymap.set('n', '<leader>sc', function()
+        builtin.find_files { cwd = '~/dotfiles' }
+      end, { desc = 'Search Config' })
     end,
   },
   {
