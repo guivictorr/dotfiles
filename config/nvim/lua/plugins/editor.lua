@@ -1,59 +1,18 @@
 return {
   {
-    'saghen/blink.cmp',
-    version = '*',
-    dependencies = {
-      {
-        'windwp/nvim-autopairs',
-        opts = {},
-      },
-      {
-        'windwp/nvim-ts-autotag',
-        opts = {},
-      },
-    },
-    opts = {
-      sources = {
-        default = { 'lsp', 'path', 'buffer' },
-      },
-      keymap = {
-        preset = 'enter',
-      },
-      completion = {
-        menu = {
-          auto_show = function(ctx)
-            return ctx.mode ~= 'cmdline'
-          end,
-          border = 'rounded',
-          winhighlight = 'Normal:NormalFloat,FloatBorder:Normal',
-          draw = {
-            treesitter = { 'lsp' },
-          },
-        },
-        documentation = {
-          auto_show = true,
-          auto_show_delay_ms = 200,
-          window = {
-            border = 'rounded',
-          },
-        },
-        ghost_text = {
-          enabled = vim.g.ai_cmp,
-        },
-      },
-    },
-  },
-  {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.x',
+    tag = '0.1.8',
     keys = { '<leader>sf', '<leader>sh', '<leader>sg', '<leader>sd', '<leader>sb' },
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      { 'nvim-telescope/telescope-ui-select.nvim' },
+      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+    },
     config = function()
       require('telescope').setup {
         defaults = {
           sorting_strategy = 'ascending', -- Sort results in ascending order
           layout_config = {
-
             prompt_position = 'top',
           },
         },
@@ -67,7 +26,14 @@ return {
             previewer = false,
           },
         },
+        extensions = {
+          ['ui-select'] = {
+            require('telescope.themes').get_dropdown(),
+          },
+        },
       }
+
+      pcall(require('telescope').load_extension, 'ui-select')
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Search Help' })

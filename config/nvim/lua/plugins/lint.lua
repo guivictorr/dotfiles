@@ -1,4 +1,25 @@
 return {
+  { -- Autoformat
+    'stevearc/conform.nvim',
+    event = { 'BufWritePre' },
+    cmd = { 'ConformInfo' },
+    opts = {
+      notify_on_error = false,
+      format_on_save = function()
+        return {
+          timeout_ms = 500,
+          lsp_format = 'fallback',
+        }
+      end,
+      formatters_by_ft = {
+        lua = { 'stylua' },
+        javascript = { 'prettierd' },
+        javascriptreact = { 'prettierd' },
+        typescript = { 'prettierd' },
+        typescriptreact = { 'prettierd' },
+      },
+    },
+  },
   { -- Linting
     'mfussenegger/nvim-lint',
     event = { 'BufReadPre', 'BufNewFile' },
@@ -6,6 +27,10 @@ return {
       local lint = require 'lint'
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
+        javascript = { 'eslint' },
+        javascriptreact = { 'eslint' },
+        typescript = { 'eslint' },
+        typescriptreact = { 'eslint' },
       }
 
       -- Create autocommand which carries out the actual linting

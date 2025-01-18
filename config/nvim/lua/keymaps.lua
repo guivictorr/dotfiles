@@ -41,4 +41,4 @@ keymap.set('n', '<leader>ur', '<CMD>nohl<CR>', { desc = 'Clear Highlights' })
 
 keymap.set('n', 'C-s', '<CMD>w<CR>', { desc = 'Save Buffer' })
 
-keymap.set('n', '<leader>qq', '<CMD>q<CR>', { desc = 'Quit' })
+keymap.set('n', '<leader>qq', '<CMD>qa<CR>', { desc = 'Quit' })
