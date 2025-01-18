@@ -1,6 +1,9 @@
 vim.diagnostic.config {
-  float = { border = 'rounded' },
+  float = {
+    border = 'rounded',
+  },
 }
+
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'oil',
   desc = 'Remove line number on oil.nvim buffers',

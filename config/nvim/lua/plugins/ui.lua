@@ -1,5 +1,28 @@
 return {
   {
+    'folke/noice.nvim',
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+      {
+        'rcarriga/nvim-notify',
+        opts = {
+          render = 'compact',
+          stages = 'static',
+        },
+      },
+    },
+    event = 'VeryLazy',
+    opts = {
+      presets = {
+        bottom_search = true, -- use a classic bottom cmdline for search
+        command_palette = true, -- position the cmdline and popupmenu together
+        long_message_to_split = true, -- long messages will be sent to a split
+        inc_rename = false, -- enables an input dialog for inc-rename.nvim
+        lsp_doc_border = true, -- add a border to hover docs and signature help
+      },
+    },
+  },
+  {
     'folke/which-key.nvim',
     event = 'VeryLazy',
     opts = {
@@ -24,7 +47,8 @@ return {
           },
         },
         lualine_b = {
-          { 'filetype', separator = '', padding = { left = 1, right = 1 } },
+          { 'filetype', icon_only = true, separator = '', padding = { left = 1, right = 1 } },
+          { 'filename', separator = '', padding = { right = 1 } },
         },
         lualine_c = {
           {
@@ -38,8 +62,8 @@ return {
         lualine_x = {
           {
             'diagnostics',
-            always_visible = true,
-            sections = { 'error', 'hint', 'warn' },
+            always_visible = false,
+            sections = { 'error', 'warn' },
             padding = { right = 1 },
           },
         },

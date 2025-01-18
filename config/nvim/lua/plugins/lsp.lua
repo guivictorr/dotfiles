@@ -35,6 +35,15 @@ return {
           map('<leader>gr', vim.lsp.buf.rename, 'Rename')
           map('<leader>ca', vim.lsp.buf.code_action, 'Code Action', { 'n', 'x' })
           map('gD', vim.lsp.buf.declaration, 'Goto Declaration')
+          map(']d', function()
+            vim.diagnostic.goto_next { float = true } -- Move to the next diagnostic
+            vim.diagnostic.open_float(nil, { focusable = false }) -- Open float window
+          end, 'Next Diagnostic')
+
+          map('[d', function()
+            vim.diagnostic.goto_prev { float = true } -- Move to the previous diagnostic
+            vim.diagnostic.open_float(nil, { focusable = false }) -- Open float window
+          end, 'Previous Diagnostic')
         end,
       })
 
@@ -67,10 +76,6 @@ return {
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
-            server.handlers = {
-              ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
-              ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
-            }
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
           end,
