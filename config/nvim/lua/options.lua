@@ -33,3 +33,5 @@ vim.opt.fillchars = { eob = ' ' }
 vim.opt.cmdheight = 0
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
+-- Prevent splitting statusline
+vim.opt.laststatus = 3
