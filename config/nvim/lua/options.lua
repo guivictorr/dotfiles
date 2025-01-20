@@ -35,3 +35,7 @@ vim.opt.cmdheight = 0
 vim.opt.signcolumn = 'yes'
 -- Prevent splitting statusline
 vim.opt.laststatus = 3
+-- Number of spaces
+vim.opt.tabstop = 2
+-- Size of indent
+vim.opt.shiftwidth = 2
