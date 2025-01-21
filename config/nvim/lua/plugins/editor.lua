@@ -40,13 +40,13 @@ return {
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = 'Search Files (Cwd)' })
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = 'Search by Grep' })
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Search Diagnostics' })
-      vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Find existing buffers' })
+      vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Search Existing Buffers' })
       -- Function to get the root directory
 
       -- Key mapping for searching in the root folder
       vim.keymap.set('n', '<leader>sF', function()
         builtin.find_files { cwd = require('utils').get_root_dir() }
-      end, { desc = 'Search files (Root Folder)' })
+      end, { desc = 'Search Files (Root Folder)' })
       -- Shortcut for searching my dotfiles
       vim.keymap.set('n', '<leader>sc', function()
         builtin.find_files { cwd = '~/dotfiles' }
@@ -58,7 +58,7 @@ return {
     ---@module 'oil'
     ---@type oil.SetupOpts
     keys = {
-      { '<leader>e', ':Oil --float<CR>', desc = 'Oil' },
+      { '<leader>e', ':Oil --float<CR>', desc = 'Explorer' },
     },
     opts = {
       win_options = {

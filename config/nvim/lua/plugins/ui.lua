@@ -28,6 +28,38 @@ return {
     opts = {
       preset = 'helix',
     },
+    config = function()
+      local wk = require 'which-key'
+      wk.add {
+        { '<leader>s', group = 'Search' },
+        { 'gs', group = 'Surround', icon = ' ' },
+        { '<leader>l', group = 'Lazy', icon = '󰒲 ' },
+        { '<leader>q', group = 'Quit' },
+        { '<leader>c', group = 'Misc', icon = ' ' },
+        { '<leader>e', icon = ' ' },
+        { '<leader>cn', icon = ' ' },
+        { '<leader>ch', icon = ' ' },
+      }
+      wk.setup {
+        preset = 'helix',
+        plugins = {
+          marks = false,
+          presets = {
+            operators = true, -- adds help for operators like d, y, ...
+            motions = true, -- adds help for motions
+            text_objects = true, -- help for text objects triggered after entering an operator
+            windows = false, -- default bindings on <c-w>
+            nav = false, -- misc bindings to work with windows
+            z = false, -- bindings for folds, spelling and others prefixed with z
+            g = false, -- bindings for prefixed with g
+          },
+        },
+        icons = {
+          group = '',
+          separator = ' ',
+        },
+      }
+    end,
   },
   {
     'nvim-lualine/lualine.nvim',
