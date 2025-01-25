@@ -3,13 +3,6 @@ return {
     'folke/noice.nvim',
     dependencies = {
       'MunifTanjim/nui.nvim',
-      {
-        'rcarriga/nvim-notify',
-        opts = {
-          render = 'compact',
-          stages = 'static',
-        },
-      },
     },
     event = 'VeryLazy',
     opts = {
@@ -36,6 +29,7 @@ return {
         { '<leader>l', group = 'Lazy', icon = '󰒲 ' },
         { '<leader>q', group = 'Quit' },
         { '<leader>c', group = 'Misc', icon = ' ' },
+        { '<leader>g', group = 'Git' },
         { '<leader>e', icon = ' ' },
         { '<leader>cn', icon = ' ' },
         { '<leader>ch', icon = ' ' },
