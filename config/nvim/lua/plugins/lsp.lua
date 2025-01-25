@@ -16,6 +16,8 @@ return {
       servers = {
         lua_ls = {},
         vtsls = {},
+        html = {},
+        tailwindcss = {},
       },
     },
     config = function(_, opts)

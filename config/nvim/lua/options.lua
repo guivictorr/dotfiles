@@ -20,7 +20,7 @@ vim.opt.smartcase = true
 -- Decrease update time
 vim.opt.updatetime = 250
 -- Decrease mapped sequence wait time
-vim.opt.timeoutlen = 300
+vim.opt.timeoutlen = 100
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
 -- Show which line your cursor is on

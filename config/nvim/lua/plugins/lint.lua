@@ -18,6 +18,7 @@ return {
         typescript = { 'prettierd' },
         typescriptreact = { 'prettierd' },
         json = { 'prettierd' },
+        html = { 'prettierd' },
       },
     },
   },
