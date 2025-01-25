@@ -11,15 +11,7 @@ return {
           lsp_format = 'fallback',
         }
       end,
-      formatters_by_ft = {
-        lua = { 'stylua' },
-        javascript = { 'prettierd' },
-        javascriptreact = { 'prettierd' },
-        typescript = { 'prettierd' },
-        typescriptreact = { 'prettierd' },
-        json = { 'prettierd' },
-        html = { 'prettierd' },
-      },
+      formatters_by_ft = require('utils').formatters,
     },
   },
   { -- Linting
@@ -27,12 +19,7 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       local lint = require 'lint'
-      lint.linters_by_ft = {
-        javascript = { 'eslint_d' },
-        javascriptreact = { 'eslint_d' },
-        typescript = { 'eslint_d' },
-        typescriptreact = { 'eslint_d' },
-      }
+      lint.linters_by_ft = require('utils').linters
 
       -- Create autocommand which carries out the actual linting
       -- on the specified events.

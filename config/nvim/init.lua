@@ -1,8 +1,8 @@
 -- [[ Auto Commands ]]
-require("autocmds")
+require 'autocmds'
 -- [[ Setting options ]]
-require("options")
+require 'options'
 -- [[ Basic Keymaps ]]
-require("keymaps")
+require 'keymaps'
 -- [[ Install `lazy.nvim` plugin manager ]]
-require("lazy-bootstrap")
+require 'lazy-bootstrap'

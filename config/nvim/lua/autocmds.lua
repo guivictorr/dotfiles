@@ -1,3 +1,9 @@
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
+  callback = function(event)
+    require('keymaps').lsp(require 'telescope.builtin', event.buf)
+  end,
+})
 vim.diagnostic.config {
   float = {
     border = 'rounded',
@@ -10,7 +16,6 @@ vim.diagnostic.config {
     },
   },
 }
-
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'oil',
   desc = 'Remove line number on oil.nvim buffers',

@@ -34,23 +34,7 @@ return {
       }
 
       pcall(require('telescope').load_extension, 'ui-select')
-      -- See `:help telescope.builtin`
-      local builtin = require 'telescope.builtin'
-      vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Search Help' })
-      vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = 'Search Files (Cwd)' })
-      vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = 'Search by Grep' })
-      vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Search Diagnostics' })
-      vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Search Existing Buffers' })
-      -- Function to get the root directory
-
-      -- Key mapping for searching in the root folder
-      vim.keymap.set('n', '<leader>sF', function()
-        builtin.find_files { cwd = require('utils').get_root_dir() }
-      end, { desc = 'Search Files (Root Folder)' })
-      -- Shortcut for searching my dotfiles
-      vim.keymap.set('n', '<leader>sc', function()
-        builtin.find_files { cwd = '~/dotfiles' }
-      end, { desc = 'Search Config' })
+      require('keymaps').telescope(require 'telescope.builtin')
     end,
   },
   {
