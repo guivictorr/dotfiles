@@ -13,6 +13,16 @@ return {
         inc_rename = false, -- enables an input dialog for inc-rename.nvim
         lsp_doc_border = true, -- add a border to hover docs and signature help
       },
+      lsp = {
+        hover = {
+          silent = true,
+        },
+      },
+      views = {
+        hover = {
+          size = { max_width = 60, max_height = 10 },
+        },
+      },
     },
   },
   {

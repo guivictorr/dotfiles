@@ -28,6 +28,8 @@ return {
           winhighlight = 'Normal:NormalFloat,FloatBorder:Normal',
         },
         documentation = {
+          auto_show = true,
+          auto_show_delay_ms = 0,
           window = {
             border = 'rounded',
           },
