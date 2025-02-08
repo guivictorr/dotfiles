@@ -100,6 +100,16 @@ return {
           find_files = {
             theme = 'dropdown',
             previewer = false,
+            find_command = {
+              'fd',
+              '--type',
+              'f', -- Find only files
+              '--hidden', -- Include hidden files (needed for filtering)
+              '--exclude',
+              '.git', -- Exclude .git folder
+              '--ignore-file',
+              '.gitignore', -- Use .gitignore rules
+            },
           },
           buffers = {
             theme = 'dropdown',
