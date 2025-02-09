@@ -55,6 +55,86 @@ return {
         mode = 'n',
         desc = 'Confirm Quit',
       },
+      {
+        '<leader>sh',
+        function()
+          Snacks.picker.help()
+        end,
+        desc = 'Search Help',
+      },
+      {
+        '<leader>sF',
+        function()
+          Snacks.picker.files { cwd = require('utils').get_root_dir() }
+        end,
+        desc = 'Search Files',
+      },
+      {
+        '<leader>sf',
+        function()
+          Snacks.picker.files()
+        end,
+        desc = 'Search Files',
+      },
+      {
+        '<leader>sg',
+        function()
+          Snacks.picker.grep()
+        end,
+        desc = 'Search Grep',
+      },
+      {
+        '<leader>sc',
+        function()
+          Snacks.picker.files { cwd = '~/dotfiles' }
+        end,
+        desc = 'Search Config',
+      },
+      -- TODO: Change the behavior of diagnostics, it should copy diagnostic message
+      {
+        '<leader>sd',
+        function()
+          Snacks.picker.diagnostics()
+        end,
+        desc = 'Search Diagnostics',
+      },
+      {
+        '<leader>sH',
+        function()
+          Snacks.picker.highlights()
+        end,
+        desc = 'Search Highlights',
+      },
+      -- LSP
+      {
+        'gd',
+        function()
+          Snacks.picker.lsp_definitions()
+        end,
+        desc = 'Goto Definition',
+      },
+      {
+        'gr',
+        function()
+          Snacks.picker.lsp_references()
+        end,
+        nowait = true,
+        desc = 'Goto References',
+      },
+      {
+        '<leader>ss',
+        function()
+          Snacks.picker.lsp_symbols()
+        end,
+        desc = 'Search Symbols',
+      },
+      {
+        '<leader>sS',
+        function()
+          Snacks.picker.lsp_workspace_symbols()
+        end,
+        desc = 'Search Workspace Symbols',
+      },
     },
     opts = {
       bufdelete = { enabled = true },
@@ -67,6 +147,9 @@ return {
       win = {
         backdrop = 100,
         border = 'rounded',
+      },
+      picker = {
+        layout = { preset = 'select', layout = { backdrop = false } },
       },
       dashboard = {
         sections = {
@@ -109,54 +192,6 @@ return {
         },
       },
     },
-  },
-  {
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.8',
-    event = 'VimEnter',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      { 'nvim-telescope/telescope-ui-select.nvim' },
-      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
-    },
-    config = function()
-      require('telescope').setup {
-        defaults = {
-          sorting_strategy = 'ascending', -- Sort results in ascending order
-          layout_config = {
-            prompt_position = 'top',
-          },
-        },
-        pickers = {
-          find_files = {
-            theme = 'dropdown',
-            previewer = false,
-            find_command = {
-              'fd',
-              '--type',
-              'f', -- Find only files
-              '--hidden', -- Include hidden files (needed for filtering)
-              '--exclude',
-              '.git', -- Exclude .git folder
-              '--ignore-file',
-              '.gitignore', -- Use .gitignore rules
-            },
-          },
-          buffers = {
-            theme = 'dropdown',
-            previewer = false,
-          },
-        },
-        extensions = {
-          ['ui-select'] = {
-            require('telescope.themes').get_dropdown(),
-          },
-        },
-      }
-
-      pcall(require('telescope').load_extension, 'ui-select')
-      require('keymaps').telescope(require 'telescope.builtin')
-    end,
   },
   {
     'stevearc/oil.nvim',

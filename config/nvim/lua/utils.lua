@@ -19,6 +19,7 @@ end
 
 function M.get_root_dir()
   -- Check for the .git directory in the current directory hierarchy
+  -- TODO: I can't depend on .git folder to find root
   local dir = vim.fn.finddir('.git', ';')
   if dir ~= '' then
     return vim.fn.fnamemodify(dir, ':h') -- Return the directory of the .git folder

@@ -42,37 +42,13 @@ keymap.set('n', 'C-s', '<CMD>w<CR>', { desc = 'Save Buffer' })
 keymap.set('n', '<leader>qq', '<CMD>qa<CR>', { desc = 'Confirm Quit' })
 keymap.set('n', '<C-s>', '<CMD>w<CR>', { desc = 'Save Buffer' })
 keymap.set('n', '<leader>cn', '<CMD>Noice dismiss<CR>', { desc = 'Clear Notifications' })
-keymap.set('n', '<leader>sn', '<CMD>Noice telescope<CR>', { desc = 'Search Notifications' })
 
-function M.telescope(builtin)
-  vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Search Help' })
-  vim.keymap.set('n', '<leader>sH', builtin.highlights, { desc = 'Search Highlights' })
-  vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = 'Search Files (Cwd)' })
-  vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = 'Search by Grep' })
-  vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Search Diagnostics' })
-  vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Search Existing Buffers' })
-  -- Key mapping for searching in the root folder
-  vim.keymap.set('n', '<leader>sF', function()
-    builtin.find_files { cwd = require('utils').get_root_dir() }
-  end, { desc = 'Search Files (Root Folder)' })
-  -- Shortcut for searching my dotfiles
-  vim.keymap.set('n', '<leader>sc', function()
-    builtin.find_files { cwd = '~/dotfiles' }
-  end, { desc = 'Search Config' })
-end
-function M.lsp(telescope_builtin, buffer)
+function M.lsp(buffer)
   local map = function(keys, func, desc, mode)
     mode = mode or 'n'
     vim.keymap.set(mode, keys, func, { buffer = buffer, desc = desc })
   end
 
-  map('gd', telescope_builtin.lsp_definitions, 'Goto Definition')
-  map('gr', telescope_builtin.lsp_references, 'Goto References')
-  map('gI', telescope_builtin.lsp_implementations, 'Goto Implementation')
-  map('gD', vim.lsp.buf.declaration, 'Goto Declaration')
-  map('<leader>D', telescope_builtin.lsp_type_definitions, 'Type Definition')
-  map('<leader>ss', telescope_builtin.lsp_document_symbols, 'Search Symbols')
-  map('<leader>sS', telescope_builtin.lsp_dynamic_workspace_symbols, 'Search Workspace Symbols')
   map('<leader>cr', vim.lsp.buf.rename, 'Rename')
   map('<leader>ca', vim.lsp.buf.code_action, 'Code Action', { 'n', 'x' })
   map(']d', function()

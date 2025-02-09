@@ -1,7 +1,7 @@
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
   callback = function(event)
-    require('keymaps').lsp(require 'telescope.builtin', event.buf)
+    require('keymaps').lsp(event.buf)
   end,
 })
 vim.diagnostic.config {
