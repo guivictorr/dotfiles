@@ -34,12 +34,14 @@ return {
     config = function()
       local wk = require 'which-key'
       wk.add {
+        mode = { 'n', 'v' },
         { '<leader>s', group = 'Search' },
         { 'gs', group = 'Surround', icon = ' ' },
         { '<leader>l', group = 'Lazy', icon = '󰒲 ' },
         { '<leader>q', group = 'Quit' },
         { '<leader>c', group = 'Misc', icon = ' ' },
         { '<leader>g', group = 'Git' },
+        { '<leader>gh', group = 'Hunks' },
         { '<leader>b', group = 'Buffer' },
         { '<leader>e', icon = ' ' },
         { '<leader>cn', icon = ' ' },
