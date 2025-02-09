@@ -90,7 +90,6 @@ return {
         end,
         desc = 'Search Config',
       },
-      -- TODO: Change the behavior of diagnostics, it should copy diagnostic message
       {
         '<leader>sd',
         function()
@@ -150,6 +149,15 @@ return {
       },
       picker = {
         layout = { preset = 'select', layout = { backdrop = false } },
+        sources = {
+          diagnostics = {
+            confirm = function(picker)
+              picker:action 'yank'
+              picker:close()
+              print 'Diagnostic message copied.'
+            end,
+          },
+        },
       },
       dashboard = {
         sections = {
