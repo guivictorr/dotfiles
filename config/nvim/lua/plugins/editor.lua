@@ -150,6 +150,12 @@ return {
       picker = {
         layout = { preset = 'select', layout = { backdrop = false } },
         sources = {
+          help = {
+            layout = { preset = 'default', layout = { border = 'none' } },
+            confirm = function(picker)
+              picker:action 'focus_preview'
+            end,
+          },
           diagnostics = {
             confirm = function(picker)
               picker:action 'yank'
