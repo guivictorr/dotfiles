@@ -17,6 +17,15 @@ end
 
 return {
   {
+    'lewis6991/gitsigns.nvim',
+    event = 'BufEnter',
+    keys = {
+      { '<leader>ghr', '<CMD>Gitsigns reset_hunk<CR>', desc = 'Reset Hunk', mode = { 'v', 'n' } },
+      { '<leader>ghR', '<CMD>Gitsigns reset_buffer<CR>', desc = 'Reset Buffer', mode = { 'v', 'n' } },
+    },
+    opts = {},
+  },
+  {
     'folke/snacks.nvim',
     priority = 1000,
     lazy = false,

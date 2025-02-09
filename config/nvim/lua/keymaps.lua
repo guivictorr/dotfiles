@@ -46,6 +46,7 @@ keymap.set('n', '<leader>sn', '<CMD>Noice telescope<CR>', { desc = 'Search Notif
 
 function M.telescope(builtin)
   vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Search Help' })
+  vim.keymap.set('n', '<leader>sH', builtin.highlights, { desc = 'Search Highlights' })
   vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = 'Search Files (Cwd)' })
   vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = 'Search by Grep' })
   vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Search Diagnostics' })
