@@ -29,14 +29,36 @@ return {
         mode = 'n',
         desc = 'LazyGit',
       },
+      {
+        '<leader>bd',
+        function()
+          Snacks.bufdelete.delete()
+        end,
+        mode = 'n',
+        desc = 'Buffer Delete',
+      },
+      {
+        '<leader>qq',
+        function()
+          Snacks.bufdelete.all()
+          vim.cmd [[qa]]
+        end,
+        mode = 'n',
+        desc = 'Confirm Quit',
+      },
     },
     opts = {
+      bufdelete = { enabled = true },
+      notifier = { enabled = true },
+      lazygit = { enabled = true },
+      bigfile = { enabled = true },
+      indent = {
+        animate = { enabled = false },
+      },
       win = {
         backdrop = 100,
         border = 'rounded',
       },
-      notifier = { enabled = true },
-      lazygit = { enabled = true },
       dashboard = {
         sections = {
           {

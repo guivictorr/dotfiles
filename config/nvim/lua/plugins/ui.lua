@@ -40,6 +40,7 @@ return {
         { '<leader>q', group = 'Quit' },
         { '<leader>c', group = 'Misc', icon = ' ' },
         { '<leader>g', group = 'Git' },
+        { '<leader>b', group = 'Buffer' },
         { '<leader>e', icon = ' ' },
         { '<leader>cn', icon = ' ' },
         { '<leader>ch', icon = ' ' },
