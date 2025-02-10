@@ -163,6 +163,18 @@ return {
               print 'Diagnostic message copied.'
             end,
           },
+          files = {
+            cmd = 'fd',
+            args = {
+              '--type',
+              'f', -- Find only files
+              '--hidden', -- Include hidden files (needed for filtering)
+              '--exclude',
+              '.git', -- Exclude .git folder
+              '--ignore-file',
+              '.gitignore', -- Use .gitignore rules
+            },
+          },
         },
       },
       dashboard = {
