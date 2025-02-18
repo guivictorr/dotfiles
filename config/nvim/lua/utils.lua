@@ -35,8 +35,10 @@ M.formatters = {
   javascriptreact = { 'prettierd' },
   typescript = { 'prettierd' },
   typescriptreact = { 'prettierd' },
+  css = { 'prettierd' },
   json = { 'prettierd' },
   html = { 'prettierd' },
+  go = { 'goimports', 'gofumpt' },
 }
 M.linters = {
   javascript = { 'eslint_d' },

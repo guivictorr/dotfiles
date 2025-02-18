@@ -14,10 +14,23 @@ return {
     },
     opts = {
       servers = {
+        vtsls = {
+          settings = {
+            complete_function_calls = false,
+          },
+          typescript = {
+            updateImportsOnFileMove = { enabled = 'always' },
+            suggest = {
+              completeFunctionCalls = false,
+            },
+          },
+        },
+        gopls = {},
         lua_ls = {},
-        vtsls = {},
         html = {},
         tailwindcss = {},
+        cssls = {},
+        cssmodules_ls = {},
       },
     },
     config = function(_, opts)
