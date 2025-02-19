@@ -1,5 +1,6 @@
 return {
-  { -- Autoformat
+  -- Config formatters
+  {
     'stevearc/conform.nvim',
     event = { 'BufWritePre' },
     cmd = { 'ConformInfo' },
@@ -14,7 +15,8 @@ return {
       formatters_by_ft = require('utils').formatters,
     },
   },
-  { -- Linting
+  -- Config Linters
+  {
     'mfussenegger/nvim-lint',
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()

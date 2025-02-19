@@ -1,4 +1,5 @@
 return {
+  -- UI Improvement
   {
     'folke/noice.nvim',
     dependencies = {
@@ -25,6 +26,7 @@ return {
       },
     },
   },
+  -- Display keymaps
   {
     'folke/which-key.nvim',
     event = 'VeryLazy',
@@ -68,6 +70,7 @@ return {
       }
     end,
   },
+  -- Cool line at the bottom
   {
     'nvim-lualine/lualine.nvim',
     opts = {
@@ -119,7 +122,9 @@ return {
       extensions = { 'lazy', 'oil' },
     },
   },
+  -- Theme
   { 'sainnhe/gruvbox-material' },
+  --- Auto dark and light mode based on system theme
   {
     'f-person/auto-dark-mode.nvim',
     init = function()
