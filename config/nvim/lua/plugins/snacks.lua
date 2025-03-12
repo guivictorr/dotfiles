@@ -120,10 +120,10 @@ return {
         border = 'rounded',
       },
       picker = {
-        layout = { preset = 'select', layout = { backdrop = false } },
+        layout = { preset = 'dropdown', preview = false, layout = { backdrop = false } },
         sources = {
           help = {
-            layout = { preset = 'default', layout = { border = 'none' } },
+            layout = { preset = 'default', preview = true, layout = { border = 'none' } },
             confirm = function(picker)
               picker:action 'focus_preview'
             end,
