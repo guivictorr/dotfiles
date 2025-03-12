@@ -19,10 +19,11 @@ return {
     opts = {},
   },
   -- Auto pairs
-  { 'echasnovski/mini.pairs', version = '*', opts = {} },
+  { 'echasnovski/mini.pairs', event = 'BufReadPre', version = '*', opts = {} },
   -- Manage surroundings better like (), [], {}, "", ``.
   {
     'echasnovski/mini.surround',
+    event = 'BufReadPre',
     version = '*',
     opts = {
       mappings = {

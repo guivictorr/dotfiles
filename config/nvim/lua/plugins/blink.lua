@@ -2,6 +2,7 @@ return {
   -- AutoComplete
   {
     'saghen/blink.cmp',
+    event = 'InsertEnter',
     version = '*',
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config

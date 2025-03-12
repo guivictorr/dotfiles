@@ -115,9 +115,6 @@ return {
       notifier = { enabled = true },
       lazygit = { enabled = true },
       bigfile = { enabled = true },
-      indent = {
-        animate = { enabled = false },
-      },
       win = {
         backdrop = 100,
         border = 'rounded',
