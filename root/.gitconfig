@@ -1,20 +1,8 @@
 [user]
   name = Guilherme Victor
   email = 55333929+guivictorr@users.noreply.github.com
-	signingKey = 01A4E4D3544CB01D
-	
-[alias]
-	a = add
-	sts = status -sb
-	cm = commit -m
-	ca = commit -a
-	aall = add .
-	fuck = reset --hard
-	db = !"git branch --merged | grep -vE 'main|master|\\*' | xargs -n 1 git branch -D"
 [core]
   autocrlf = false
-[commit]
-	gpgSign = true
 [push]
 	autoSetupRemote = true
 [http]
