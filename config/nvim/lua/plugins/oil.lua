@@ -32,9 +32,10 @@ return {
         ["q"] = "actions.close",
       },
       float = {
-        max_width = 60,
-        max_height = 20,
+        max_width = 0.35,
       },
+      delete_to_trash = true,
+      skip_confirm_for_simple_edits = true,
       view_options = {
         is_hidden_file = function(name)
           local gitignore_patterns = read_gitignore()
