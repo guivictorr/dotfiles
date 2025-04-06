@@ -13,7 +13,6 @@ return {
             return ctx.mode ~= "cmdline"
           end,
           border = "rounded",
-          winhighlight = "Normal:NormalFloat,FloatBorder:Normal,BlinkCmpLabelDescription:BlinkCmpLabel",
         },
         documentation = {
           auto_show = true,

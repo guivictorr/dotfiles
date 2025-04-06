@@ -16,11 +16,10 @@ local function read_gitignore()
 end
 
 return {
-  -- File Explorer
   {
     "stevearc/oil.nvim",
     keys = {
-      { "<leader>e", ":Oil --float<CR>", desc = "Explorer" },
+      { "<leader>e", ":Oil --float<CR>", desc = "Explorer", silent = true },
     },
     opts = {
       win_options = {
@@ -32,7 +31,8 @@ return {
         ["q"] = "actions.close",
       },
       float = {
-        max_width = 0.35,
+        max_width = 0.4,
+        max_height = 0.6,
       },
       delete_to_trash = true,
       skip_confirm_for_simple_edits = true,
