@@ -20,11 +20,16 @@ return {
         backdrop = 100,
         border = "rounded",
       },
+      ---@class snacks.picker.Config
       picker = {
         layout = { preset = "dropdown", preview = false, layout = { backdrop = false } },
         sources = {
           diagnostics = {
-            confirm = { "copy", "close" },
+            confirm = function(picker, item, action)
+              local formattedText = item.text:match(".+/([^/]+%.lua.+)")
+              item.text = formattedText
+              Snacks.picker.actions.yank(picker, item, action)
+            end,
           },
           files = {
             cmd = "fd",
