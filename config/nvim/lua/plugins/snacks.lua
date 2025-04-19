@@ -24,11 +24,7 @@ return {
         layout = { preset = "dropdown", preview = false, layout = { backdrop = false } },
         sources = {
           diagnostics = {
-            confirm = function(picker)
-              picker:action("yank")
-              picker:close()
-              print("Diagnostic message copied.")
-            end,
+            confirm = { "copy", "close" },
           },
           files = {
             cmd = "fd",
