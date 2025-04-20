@@ -20,9 +20,12 @@ return {
         backdrop = 100,
         border = "rounded",
       },
-      ---@class snacks.picker.Config
       picker = {
-        layout = { preset = "dropdown", preview = false, layout = { backdrop = false } },
+        layout = {
+          preset = "dropdown",
+          preview = false,
+          layout = { backdrop = false },
+        },
         sources = {
           diagnostics = {
             confirm = function(picker, item, action)
