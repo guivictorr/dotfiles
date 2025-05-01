@@ -7,6 +7,14 @@ return {
       { "<leader>fE", false },
       { "<leader>e", false },
       { "<leader>E", false },
+      {
+        "<leader>sP",
+        function()
+          Snacks.picker.projects({
+            dev = { "~/work", "~/personal", "~/dotfiles" },
+          })
+        end,
+      },
     },
     opts = {
       explorer = { enabled = false },
@@ -60,6 +68,14 @@ return {
               text = {
                 { "  Find File", hl = "AccessQual", width = 50 },
                 { "[f]", hl = "SnacksDashboardDir" },
+              },
+            },
+            {
+              action = "<leader>sP",
+              key = "p",
+              text = {
+                { "  Find Projects", hl = "AccessQual", width = 50 },
+                { "[p]", hl = "SnacksDashboardDir" },
               },
             },
             {
