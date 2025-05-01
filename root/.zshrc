@@ -4,7 +4,7 @@ export LANG=en_US.UTF-8
 
 ZSH_THEME="spaceship"
 
-plugins=(git zsh-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 alias vim="nvim"
 alias sd="cd ~ && cd \$(find -L SecondBrain personal work dotfiles -maxdepth 1 -mindepth 0 -type d ! -name '.*' 2>/dev/null | fzf)"
