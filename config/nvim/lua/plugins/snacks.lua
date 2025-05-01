@@ -74,7 +74,7 @@ return {
               action = "<leader>ql",
               key = "s",
               text = {
-                { "  Restore Session", hl = "AccessQual", width = 50 },
+                { "  Restore Session", hl = "AccessQual", width = 50 },
                 { "[s]", hl = "SnacksDashboardDir" },
               },
             },
