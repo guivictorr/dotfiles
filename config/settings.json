@@ -1,0 +1,108 @@
+{
+  "apc.electron": {
+    "frame": false,
+    "titleBarStyle": "hiddenInset"
+  },
+  "apc.header": {
+    "height": 36
+  },
+  "apc.listRow": {
+    "height": 24
+  },
+  "breadcrumbs.enabled": false,
+  "chat.commandCenter.enabled": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "JetBrains Mqno",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 12,
+  "editor.formatOnSave": true,
+  "editor.lineHeight": 1.8,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.renderLineHighlight": "gutter",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.semanticHighlighting.enabled": false,
+  "editor.stickyScroll.enabled": false,
+  "explorer.compactFolders": false,
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "terminal.integrated.lineHeight": 1.8,
+  "vim.leader": "<space>",
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["g", "r"],
+      "commands": ["references-view.findReferences"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["<leader>", "c", "A"],
+      "commands": ["editor.action.sourceAction"]
+    },
+    {
+      "before": ["<leader>", "c", "o"],
+      "commands": ["editor.action.organizeImports"]
+    },
+    {
+      "before": ["H"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    {
+      "before": ["L"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    {
+      "after": ["N", "z", "z"],
+      "before": ["N"]
+    },
+    {
+      "after": ["n", "z", "z"],
+      "before": ["n"]
+    },
+    {
+      "after": ["<C-u>", "z", "z"],
+      "before": ["<C-u>"]
+    },
+    {
+      "after": ["<C-d>", "z", "z"],
+      "before": ["<C-d>"]
+    },
+    {
+      "before": ["<leader>", "s", "r"],
+      "commands": ["workbench.action.replaceInFiles"]
+    },
+    {
+      "before": ["<leader>", "E"],
+      "commands": ["workbench.files.action.focusFilesExplorer"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["<leader>", "/"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["<S-k>"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    }
+  ],
+  "vim.useSystemClipboard": true,
+  "window.commandCenter": false,
+  "workbench.activityBar.location": "hidden",
+  "workbench.colorTheme": "Min Dark",
+  "workbench.editor.editorActionsLocation": "hidden",
+  "workbench.editor.labelFormat": "short",
+  "workbench.layoutControl.enabled": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.statusBar.visible": false
+}
