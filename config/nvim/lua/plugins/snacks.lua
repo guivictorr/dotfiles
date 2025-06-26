@@ -11,7 +11,7 @@ return {
         "<leader>sP",
         function()
           Snacks.picker.projects({
-            dev = { "~/work", "~/personal", "~/dotfiles" },
+            dev = { "~/www" },
           })
         end,
       },
