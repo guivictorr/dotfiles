@@ -9,12 +9,21 @@
 vim.api.nvim_create_autocmd("BufEnter", {
   desc = "Override floating highlights",
   callback = function()
-    vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
-    vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
-    vim.api.nvim_set_hl(0, "FloatTitle", { link = "Normal" })
-    vim.api.nvim_set_hl(0, "Pmenu", { link = "Normal" })
+    local border = "SnacksPickerBorder"
+    local background = "Normal"
+    local title = "SnacksPickerTitle"
+
+    vim.api.nvim_set_hl(0, "FloatTitle", { link = title })
+    vim.api.nvim_set_hl(0, "Pmenu", { link = background })
+    vim.api.nvim_set_hl(0, "NormalFloat", { link = background })
+    vim.api.nvim_set_hl(0, "FloatBorder", { link = border })
+    vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { link = border })
+    vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { link = border })
+
     vim.api.nvim_set_hl(0, "PmenuExtra", { link = "Comment" })
     vim.api.nvim_set_hl(0, "SnacksIndentScope", { link = "Comment" })
+    vim.api.nvim_set_hl(0, "SnacksPickerListCursorLine", { link = "CursorColumn" })
+    vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", { link = "CursorColumn" })
   end,
 })
 vim.api.nvim_create_autocmd("FileType", {
