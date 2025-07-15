@@ -29,10 +29,19 @@ return {
         border = "rounded",
       },
       picker = {
-        layout = {
-          preset = "dropdown",
-          preview = false,
-          layout = { backdrop = false },
+        layout = "my_layout",
+        layouts = {
+          my_layout = {
+            layout = {
+              box = "vertical",
+              width = 0.4,
+              height = 0.9,
+              border = "none",
+              backdrop = 100,
+              { win = "input", height = 1, border = "rounded", title = "{title} {live} {flags}", title_pos = "center" },
+              { win = "list", title = " Results ", title_pos = "center", border = "rounded" },
+            },
+          },
         },
         sources = {
           diagnostics = {
