@@ -15,8 +15,4 @@ return {
     "catppuccin",
     enabled = false,
   },
-  {
-    "flash.nvim",
-    enabled = false,
-  },
 }
