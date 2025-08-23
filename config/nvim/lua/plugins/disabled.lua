@@ -1,5 +1,13 @@
 return {
   {
+    "tokyonight.nvim",
+    enabled = false,
+  },
+  {
+    "lualine.nvim",
+    enabled = false,
+  },
+  {
     "bufferline.nvim",
     enabled = false,
   },

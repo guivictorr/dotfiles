@@ -16,8 +16,9 @@ return {
         end,
       },
     },
+    ---@type snacks.Config
     opts = {
-      explorer = { enabled = false },
+      explorer = { enabled = true },
       terminal = { enabled = false },
       quickfile = { enabled = false },
       scope = { enabled = false },
