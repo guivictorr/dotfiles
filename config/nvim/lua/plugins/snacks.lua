@@ -34,7 +34,14 @@ return {
           my_layout = {
             layout = {
               box = "vertical",
-              width = 0.4,
+              width = function()
+                local columns = vim.o.columns
+                if columns < 90 then
+                  return 0.9
+                end
+
+                return 0.4
+              end,
               height = 0.9,
               border = "none",
               backdrop = 100,
@@ -44,13 +51,6 @@ return {
           },
         },
         sources = {
-          diagnostics = {
-            confirm = function(picker, item, action)
-              local formattedText = item.text:match(".+/([^/]+%.lua.+)")
-              item.text = formattedText
-              Snacks.picker.actions.yank(picker, item, action)
-            end,
-          },
           files = {
             cmd = "fd",
             args = {
