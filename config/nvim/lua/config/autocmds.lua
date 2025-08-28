@@ -19,6 +19,8 @@ vim.api.nvim_create_autocmd("BufEnter", {
     vim.api.nvim_set_hl(0, "FloatBorder", { link = border })
     vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { link = border })
     vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { link = border })
+    vim.api.nvim_set_hl(0, "StatusLine", { link = background })
+    vim.api.nvim_set_hl(0, "StatusLineNC", { link = background })
 
     vim.api.nvim_set_hl(0, "PmenuExtra", { link = "Comment" })
     vim.api.nvim_set_hl(0, "SnacksIndentScope", { link = "Comment" })
