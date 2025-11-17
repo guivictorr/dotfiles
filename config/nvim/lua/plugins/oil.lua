@@ -33,6 +33,7 @@ return {
       float = {
         max_width = 0.4,
         max_height = 0.6,
+        border = "rounded",
       },
       delete_to_trash = true,
       skip_confirm_for_simple_edits = true,
