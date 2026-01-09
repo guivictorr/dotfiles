@@ -34,6 +34,16 @@ return {
         max_width = 0.4,
         max_height = 0.6,
         border = "rounded",
+        override = function(defaults)
+          -- align center
+          -- why default is not center?
+          defaults["col"] = (vim.o.columns / 2) - defaults["width"] / 2
+
+          return defaults
+        end,
+      },
+      confirmation = {
+        border = "rounded",
       },
       delete_to_trash = true,
       skip_confirm_for_simple_edits = true,
