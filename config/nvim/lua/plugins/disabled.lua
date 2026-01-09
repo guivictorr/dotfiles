@@ -1,5 +1,9 @@
 return {
   {
+    "trouble.nvim",
+    enabled = false,
+  },
+  {
     "tokyonight.nvim",
     enabled = false,
   },
