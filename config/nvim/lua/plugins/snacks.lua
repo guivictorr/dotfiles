@@ -27,31 +27,39 @@ return {
       words = { enabled = false },
       win = {
         backdrop = 100,
-        border = "rounded",
       },
       picker = {
-        layout = "my_layout",
-        layouts = {
-          my_layout = {
-            layout = {
+        layout = {
+          preset = "telescope",
+          preview = false,
+          layout = {
+            box = "horizontal",
+            backdrop = false,
+            width = 0.4,
+            height = 0.9,
+            border = true,
+            title = "{title} {live} {flags}",
+            title_pos = "left",
+            {
               box = "vertical",
-              width = function()
-                local columns = vim.o.columns
-                if columns < 90 then
-                  return 0.9
-                end
-
-                return 0.4
-              end,
-              height = 0.9,
-              border = "none",
-              backdrop = 100,
-              { win = "input", height = 1, border = "rounded", title = "{title} {live} {flags}", title_pos = "center" },
-              { win = "list", title = " Results ", title_pos = "center", border = "rounded" },
+              {
+                win = "input",
+                height = 1,
+                border = "bottom",
+              },
+              { win = "list", border = "none" },
+            },
+            {
+              win = "preview",
+              title = "{preview:Preview}",
+              border = "left",
+              width = 0.6,
+              title_pos = "center",
             },
           },
         },
         sources = {
+          grep = { layout = { preview = true, layout = { width = 0.8 } } },
           files = {
             cmd = "fd",
             args = {
