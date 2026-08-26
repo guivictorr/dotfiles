@@ -18,7 +18,7 @@ return {
     },
     ---@type snacks.Config
     opts = {
-      explorer = { enabled = true },
+      explorer = { enabled = false },
       terminal = { enabled = false },
       quickfile = { enabled = false },
       scope = { enabled = false },
@@ -35,7 +35,7 @@ return {
           layout = {
             box = "horizontal",
             backdrop = false,
-            width = 0.4,
+            width = 0.6,
             height = 0.9,
             border = true,
             title = "{title} {live} {flags}",
