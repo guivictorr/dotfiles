@@ -1,14 +1,16 @@
 return {
   {
-    "sainnhe/gruvbox-material",
-    config = function()
-      vim.g.gruvbox_material_background = "hard"
-    end,
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    opts = {
+      flavour = "mocha",
+    },
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox-material",
+      colorscheme = "catppuccin",
     },
   },
 }
